@@ -1,0 +1,37 @@
+# ── OS junk ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Editor / tooling junk ───────────────────────────────
+*.bak
+*.tmp
+*~
+.vscode/
+
+# ── Arduino / embedded build artifacts ──────────────────
+*.hex
+*.elf
+build/
+
+# ── Large binaries (keep the repo lightweight) ──────────
+# CAD and archives are ignored by default so the repo stays small and
+# clones stay fast. Export a lightweight PNG/PDF screenshot of your CAD
+# into 05_media/photos/ instead — that is what shows in the portfolio.
+*.zip
+*.STEP
+*.stp
+*.stl
+#
+# ── Need to version real CAD later? Two options ─────────
+# 1. Un-ignore ONE file type by adding a negation line BELOW the rules
+#    above, e.g. to start tracking STL files, add:
+#        !*.stl
+#    (a line starting with ! re-includes a pattern that was ignored)
+#    You can also un-ignore a single file:  !05_media/gripper.stl
+#
+# 2. For CAD-heavy projects, use Git LFS (Large File Storage) so big
+#    binaries do not bloat the repo:
+#        git lfs install
+#        git lfs track "*.stl"
+#        git add .gitattributes
+#    Then remove the matching ignore line above so LFS can track them.

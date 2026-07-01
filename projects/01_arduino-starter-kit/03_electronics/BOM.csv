@@ -1,0 +1,2 @@
+item,qty,supplier,part_number,unit_cost,total_cost,notes
+Arduino Uno R3,1,Arduino,A000066,90.00,90.00,Example row — replace with your real parts; unit_cost x qty = total_cost
