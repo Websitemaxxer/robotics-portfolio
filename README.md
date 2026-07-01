@@ -8,7 +8,7 @@ An aspiring engineer keeping an honest, dated record of what I build, how it wor
 |---|---|
 | **Name** | Kush Kumar |
 | **School** | Cranleigh Abu Dhabi |
-| **Email** | [email] *(← replace with your email)* |
+| **Email** | k.kumar@ankvt.com |
 | **GitHub** | https://github.com/Websitemaxxer/robotics-portfolio |
 
 ## Why this repo exists
