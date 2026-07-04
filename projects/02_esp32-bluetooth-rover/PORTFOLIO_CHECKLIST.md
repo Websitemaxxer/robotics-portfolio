@@ -16,18 +16,19 @@ someone can open this project and find proof of every claim. Each line says
 - [x] **Dated build diary** — one entry per session (reconstructed; add the personal details) → `01_planning/BUILD_DIARY.md`
 - [x] **At least one documented failure + fix** — the flaky BLE connection → the reconnect/reset watchdog → `01_planning/BUILD_DIARY.md`
 - [~] **Quantitative test results** — pass/fail recorded; a few real numbers (speed, range, current) still to measure → `06_tests/TEST_LOG.md`
-- [ ] **Demo video** — short clip of it driving from the ring → `05_media/videos/`
+- [x] **Demo video** — 20-second clip driving it with the ring → `05_media/videos/rover_demo.mov`
 - [x] **Reflection** — original vs adapted, what I'd change → `07_reflection/REFLECTION.md`
 
 ## Polish (do this before calling it "done")
 
-- [~] `README.md` filled in with a **results table** (done) and a **hero photo** (needs the top-down photo saved as `05_media/photos/HERO.jpg`)
+- [x] `README.md` filled in with a **results table** and a **hero photo** (a still from the demo video)
 - [x] A **row for this project added to the top-level `README.md`** Projects table
 - [x] The **Skills checklist in the top-level `README.md`** updated to tick what this project proves
 
 ## What's left for you (quick wins)
 
-1. **Take good photos later** (a clean hero shot + a wiring/close-up) if you get the chance,
-   and save them to `05_media/photos/` — optional, the project stands without them.
-2. Optionally take the **measurements** noted in the test log and shoot a short **demo video** —
-   both are nice-to-haves, not blockers.
+1. The hero image is a still pulled from the demo video. If you'd prefer the clean top-down
+   photo you took, save it as `05_media/photos/HERO.jpg` (overwriting the current one) — or send
+   it to me and I'll swap it in.
+2. Optionally take the **measurements** noted in the test log — a nice-to-have, not a blocker.
+3. Optionally export the Fritzing circuit to an image for the wiring diagram / system diagram.

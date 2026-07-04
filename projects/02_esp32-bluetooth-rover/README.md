@@ -13,10 +13,8 @@ The chassis, wiring, motor control, and gesture-to-drive logic are my own.
 the ring and the rover goes forward, back, left or right. I built it to learn how wireless
 control, H-bridge motor driving, and PWM actually fit together on an ESP32.*
 
-<!-- No hero photo yet. If you take a good shot of the finished rover later, save it as
-     05_media/photos/HERO.jpg and uncomment the line below so it appears here.
-![Hero photo](05_media/photos/HERO.jpg)
--->
+![The rover being driven by the Bluetooth ring](05_media/photos/HERO.jpg)
+*A still from the [demo video](05_media/videos/rover_demo.mov) — driving the rover with the Bluetooth ring.*
 
 ## Results at a glance
 
@@ -55,7 +53,7 @@ control, H-bridge motor driving, and PWM actually fit together on an ESP32.*
 - [CAD](02_cad/) — Blender model of the rover
 - [Electronics — BOM](03_electronics/BOM.csv) & [wiring](03_electronics/WIRING.md)
 - [Code](04_code/) — motor bring-up test **and** the full BLE-ring firmware
-- [Media — photos](05_media/photos/) & [videos](05_media/videos/)
+- [Media — photos](05_media/photos/) & [**demo video**](05_media/videos/rover_demo.mov) — 20-second clip driving it with the ring
 - [Test log](06_tests/TEST_LOG.md)
 - [Reflection](07_reflection/REFLECTION.md)
 - [Portfolio evidence checklist](PORTFOLIO_CHECKLIST.md)
