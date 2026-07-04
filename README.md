@@ -20,6 +20,7 @@ Anyone can say "I like robotics." This repo is the evidence. Every project keeps
 | # | Project | What it does | Key skills | Status | Folder |
 |---|---------|--------------|------------|--------|--------|
 | 1 | Arduino Starter Kit | Learning core electronics & embedded C via guided builds | Arduino, C/C++, breadboarding, sensors | In progress | [projects/01_arduino-starter-kit/](projects/01_arduino-starter-kit/) |
+| 2 | ESP32 Bluetooth Rover | Tracked rover driven wirelessly from a Bluetooth finger-ring, via an H-bridge & PWM | ESP32, Bluetooth LE (NimBLE), H-bridge/PWM, motor control | Complete | [projects/02_esp32-bluetooth-rover/](projects/02_esp32-bluetooth-rover/) |
 
 *New projects are added with `./scripts/new_project.sh` and get a new row here.*
 
@@ -47,21 +48,21 @@ The single most valuable file in each project is `01_planning/BUILD_DIARY.md` �
 I tick these off as projects prove them. Blanks are things I haven't done *yet*.
 
 **Mechanical**
-- [ ] Read and modify a CAD model
+- [x] Read and modify a CAD model *(ESP32 Rover — Blender model of the chassis)*
 - [ ] Design and 3D-print a custom part
-- [ ] Assemble a moving mechanism (gears / linkages / drivetrain)
+- [x] Assemble a moving mechanism (gears / linkages / drivetrain) *(ESP32 Rover — Technic tracked drivetrain)*
 
 **Electronics**
-- [ ] Build a circuit from a wiring diagram on a breadboard
+- [x] Build a circuit from a wiring diagram on a breadboard *(ESP32 Rover — Fritzing design)*
 - [ ] Read a datasheet and wire a sensor correctly
 - [ ] Measure voltage and current with a multimeter
-- [ ] Power a project safely (regulation, correct supply)
+- [x] Power a project safely (regulation, correct supply) *(ESP32 Rover — 9V pack, driver, switch, common ground)*
 
 **Software**
-- [ ] Write and upload embedded C/C++ to a microcontroller
+- [x] Write and upload embedded C/C++ to a microcontroller *(ESP32 Rover)*
 - [ ] Read a sensor and react to it in code
-- [ ] Drive a motor / actuator from code
-- [ ] Debug with serial output
+- [x] Drive a motor / actuator from code *(ESP32 Rover — DRV8833 H-bridge + PWM)*
+- [x] Debug with serial output *(ESP32 Rover — BLE/gesture logging)*
 
 **Practice (how I work)**
 - [ ] Keep a dated build diary for a whole project

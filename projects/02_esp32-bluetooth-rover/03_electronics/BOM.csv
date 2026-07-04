@@ -1,0 +1,10 @@
+item,qty,supplier,part_number,unit_cost,total_cost,notes
+ESP32 WROOM DevKit (USB-C),1,,,,,Main controller — ESP-32 WiFi/BLE dev board on a "London Robotics" mount plate
+DRV8833 dual H-bridge motor driver module,1,,HW-627,,,Drives both motors; labels IN1-IN4 + EEP (enable) + VM/9V Power terminal
+N20 micro metal gear motor,2,,,,,Gold-gearbox micro motors; one per track (tank/differential drive)
+LEGO Technic tank treads + sprocket wheels,1,LEGO,,,,Rubber tracks + sprockets + axle connectors for the drivetrain
+Laser-cut clear acrylic chassis,1,,,,,Two-tier transparent base plates + nylon standoffs
+Bluetooth ring remote (BLE HID),1,,,,,Wearable finger ring with a 4-way button pad + centre button
+Energizer MAX 9V battery,1,Energizer,,,,Single 9V pack powering motors (VM) and the ESP32
+On/off slide switch + jumper wires,1,,,,,Power switch and wiring between ESP32, driver, motors, battery
+,,,,,~150,Approximate total build cost in AED
