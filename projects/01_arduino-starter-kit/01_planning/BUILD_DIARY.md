@@ -8,6 +8,23 @@
 
 ---
 
+## 2026-07-06 — Project 5: Mood Cue (my first motor — and my longest debug)
+
+- **Time spent:** ~2.5 hours
+- **Goal today:** Build the Mood Cue — a potentiometer that sets the position of a **servo motor**, so turning the knob sweeps the servo arm from 0° to 180° (like a dial pointing at a "mood"). My first project with a **moving part** and the **`Servo` library**.
+- **What I did:** Wired a 10 kΩ potentiometer into **A0**, a servo onto pin **9** with power and ground, and a capacitor across the power rails to steady the servo's current draw. The sketch reads the knob (0–1023) and `map()`s it to a servo angle (0–179).
+- **What worked (eventually):** Turning the knob now sweeps the servo arm smoothly across its full range, with `potVal` and `angle` tracking live in the Serial Monitor. Photos in `05_media/photos/`, demo clip in `05_media/videos/moodcue_demo.mp4`.
+- **What failed / surprised me:** This was my longest fight yet — several separate problems stacked up:
+  1. **Frozen knob reading.** `potVal` sat stuck around 300 and ignored the knob — the classic "floating pin." My potentiometer wasn't wired as a proper divider: I had to get **both outer legs** to +5 V and GND and the **wiper (the lone single pin) to A0**. Once all three were right, it swept 0–1023.
+  2. **The servo connector wouldn't grip.** The kit's snap-off header pins have one long and one short end, so whichever way I turned them one side was always loose. Switched to plugging **jumper wires straight into the servo's plug** — full-length metal on both ends — which held properly.
+  3. **Wire-colour confusion.** My servo's colours didn't match the book's diagram, and I nearly wired the power wire to the signal pin. The rule that saved me: **the middle wire of a servo is always power**, whatever colour it is — go by position, not colour.
+  4. **The USB port kept dropping** ("cannot open port…") from all the replugging — reseating the cable and re-picking the port fixed it each time.
+  5. **The servo still wouldn't move** even after all that. So I **isolated it**: wired the servo straight into the Arduino (no breadboard, no pot) and ran a tiny sweep test sketch. It worked perfectly — which proved the servo *and* the code were fine, and the fault was in my **breadboard connections** all along.
+- **What I changed because of it:** Once the isolation test proved the servo was healthy, I reconnected it to the **same power rails that were already running the pot** (which I knew were live), pushed every wire in firmly, and it finally followed the knob.
+- **Biggest lesson:** When something won't work, **cut it down to the smallest possible version** to find out *which* part is broken. Wiring the servo straight to the Arduino instantly told me the servo and code were fine, so I stopped suspecting them and focused on the breadboard — where the real problem (loose/wrong connections) had been the whole time.
+- **Next step:** Project 6 (Light Theremin) — back to sensors, using a photoresistor to control sound from a piezo.
+- **Photos:** [Finished build](../05_media/photos/moodcue_built.jpg) · [Wiring detail](../05_media/photos/moodcue_wired.jpg)
+
 ## 2026-07-06 — Project 4: Color Mixing Lamp (my hardest debug so far)
 
 - **Time spent:** ~45 minutes

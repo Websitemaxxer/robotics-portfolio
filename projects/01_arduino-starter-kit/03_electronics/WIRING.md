@@ -105,3 +105,36 @@ The sketch reads A0/A1/A2, divides each by 4 (0–1023 → 0–255) and `analogW
 - **All three colours dead at once → shared ground.** Individual channels failing separately would leave the other colours working; total darkness means the **common leg → GND** path is broken. Re-seating the RGB LED's common-ground connection fixed it.
 - **USB port dropped mid-build.** All the replugging made the Arduino lose its serial port ("cannot open port…"). Reseated the cable and re-selected the port — not a circuit fault.
 - **Colours skew blue/purple.** With one white torch and no coloured gels the sensors all see the same light, and the blue channel reads highest — so the mix is limited. Expected, not a fault; the gels (or a `map()` rescale) unlock the full range.
+
+## Project 5 — Mood Cue
+
+### Wiring reference
+
+> ![Mood Cue wiring](../05_media/photos/moodcue_wired.jpg)
+
+### Pin map
+
+| Component | Board pin | Notes |
+|-----------|-----------|-------|
+| Potentiometer — wiper (lone middle terminal) | A0 | Analog input (the knob position) |
+| Potentiometer — one outer leg | +5 V | End of the resistive track |
+| Potentiometer — other outer leg | GND | Other end of the track |
+| Servo — signal | D9 | The `Servo` library drives it |
+| Servo — power (middle wire) | +5 V | **Middle wire is always power, whatever the colour** |
+| Servo — ground | GND | The black wire |
+| Capacitor (across the rails) | +5 V / GND | Smooths the servo's current spikes; stripe leg → GND |
+
+Logic: read A0 (0–1023) → `map()` to a servo angle (0–179) → `myServo.write(angle)`.
+
+### Power
+
+- **Supply:** USB 5 V. One small servo runs fine off the Uno's 5 V rail.
+- **Capacitor:** sits across the +5 V and GND rails as a reservoir so the servo's sudden current draw doesn't dip the supply and reset the board.
+
+### Gotchas I hit (my longest debug so far)
+
+- **Floating potentiometer.** `potVal` froze around 300 because the pot wasn't a working divider. Both outer legs must reach +5 V and GND, and the **wiper (the lone single pin) must go to A0**. Then it swept 0–1023.
+- **Servo connector wouldn't grip.** The snap-off header pins have a long and a short end, so one side was always loose. **Jumper wires straight into the servo's plug** (full-length metal both ends) held far better.
+- **Wire colour ≠ function.** My servo's colours didn't match the diagram. The rule: **the middle wire is power** regardless of colour; the outer wires are signal and ground. Go by position.
+- **USB port kept dropping** from repeated replugging — reseat cable, re-select port.
+- **Isolation test cracked it.** Wiring the servo straight to the Arduino with a sweep sketch proved the servo and code were fine — so the fault was the **breadboard connections** (loose/mis-seated), not the servo.

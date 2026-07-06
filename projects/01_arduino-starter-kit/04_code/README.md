@@ -45,4 +45,10 @@ saying **what you changed and why**.
   fault (see the [build diary](../01_planning/BUILD_DIARY.md)). *Planned extension
   (`colormixing_mine.ino`): use `map()` to balance the three channels so the colours
   aren't skewed toward blue without the coloured gels.*
+- **`exercise_05_mood_cue/moodcue_base.ino`** — Project 5, my first motor. Reads a
+  potentiometer on A0 and positions a servo on pin 9 (`Servo` library), so the arm follows
+  the knob. My longest debug — a floating pot, a fiddly servo connector, and wire-colour
+  confusion, finally cracked by isolating the servo straight to the Arduino (see the
+  [build diary](../01_planning/BUILD_DIARY.md)). *Planned extension (`moodcue_mine.ino`):
+  add a paper "mood" dial and smooth/limit the motion in code.*
 

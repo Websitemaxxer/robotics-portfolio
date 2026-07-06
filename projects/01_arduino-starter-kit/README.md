@@ -1,6 +1,6 @@
 # Arduino Starter Kit
 
-> **Status:** In progress (3 / 15 projects) &nbsp;·&nbsp; **Difficulty:** Beginner
+> **Status:** In progress (4 / 15 projects) &nbsp;·&nbsp; **Difficulty:** Beginner
 > **Started:** 2026-07-04 &nbsp;·&nbsp; **Last updated:** 2026-07-06
 
 **Based on:** The Arduino Projects Book's 15 guided projects + my own extensions (labelled per entry).
@@ -28,7 +28,7 @@ version), so it's obvious what was the book's and what was my own contribution.
 
 | Metric | Target | Achieved |
 |--------|--------|----------|
-| Guided projects completed (of 15) | 15 | 3 / 15 *(Spaceship Interface, Love-o-Meter, Color Mixing Lamp)* |
+| Guided projects completed (of 15) | 15 | 4 / 15 *(Spaceship Interface, Love-o-Meter, Color Mixing Lamp, Mood Cue)* |
 | Self-designed extensions | ≥ 3 | 0 *(next: auto-calibrate the Love-o-Meter baseline)* |
 | Sensors understood well enough to reuse in a future project | ≥ 3 | 2 *(TMP36 temperature sensor; photoresistor / LDR)* |
 
@@ -37,7 +37,7 @@ version), so it's obvious what was the book's and what was my own contribution.
 - **The problem:** I'm new to embedded electronics and want a solid, hands-on foundation in circuits, breadboarding, and writing/uploading C/C++ to a microcontroller.
 - **My contribution:** Beyond building each guided project, I extend selected ones with my own modifications (labelled per diary entry and per sketch in `04_code/`).
 - **Adapted from source:** The base circuits and starter sketches come from the Arduino Projects Book; I keep the book's version alongside my modified version so the difference is visible.
-- **Result so far:** Completed **Project 2 (Spaceship Interface)** — a pushbutton control panel that shows a steady green "idle" light and switches to alternating red "alarm" LEDs when pressed. It took **three separate wiring faults** to get working (a floating switch input, a half-seated +5 V jumper, and a signal wire in the wrong pin), all traced and documented in the [build diary](01_planning/BUILD_DIARY.md). Then **Project 3 (Love-o-Meter)** — my first **sensor** build, reading a TMP36 over analog input and lighting three LEDs like a thermometer; hit one backwards LED and fixed it in seconds because I'd already learned that failure mode. Then **Project 4 (Color Mixing Lamp)** — my hardest debug yet: an RGB LED driven by PWM from three photoresistors, where I had to fix inverted voltage dividers *and* a shared common-ground fault, using the Serial Monitor to prove the input side was fine and isolate the problem to the output.
+- **Result so far:** Completed **Project 2 (Spaceship Interface)** — a pushbutton control panel that shows a steady green "idle" light and switches to alternating red "alarm" LEDs when pressed. It took **three separate wiring faults** to get working (a floating switch input, a half-seated +5 V jumper, and a signal wire in the wrong pin), all traced and documented in the [build diary](01_planning/BUILD_DIARY.md). Then **Project 3 (Love-o-Meter)** — my first **sensor** build, reading a TMP36 over analog input and lighting three LEDs like a thermometer; hit one backwards LED and fixed it in seconds because I'd already learned that failure mode. Then **Project 4 (Color Mixing Lamp)** — a hard debug: an RGB LED driven by PWM from three photoresistors, where I had to fix inverted voltage dividers *and* a shared common-ground fault, using the Serial Monitor to prove the input side was fine and isolate the problem to the output. Then **Project 5 (Mood Cue)** — my first **motor**: a potentiometer that positions a servo. This was my longest debug (~2.5 h) — a floating pot, a fiddly servo connector, wire-colour confusion, and repeated USB dropouts — cracked by **isolating the servo** (wiring it straight to the Arduino with a test sketch) to prove it was healthy and pin the fault on my breadboard wiring.
 
 ## Explore this project
 
@@ -57,4 +57,4 @@ version), so it's obvious what was the book's and what was my own contribution.
 - **Hardware:** Official Arduino Starter Kit — Arduino Uno, breadboard, jumper wires, assorted sensors (light, temperature, etc.), DC motor & servo, LEDs, and a 16x2 LCD.
 - **Software stack:** Arduino IDE, C/C++.
 - **Cost:** ≈ AED 390 for the kit *(official Arduino Starter Kit K000007, UAE retail — adjust if you paid a different price)*
-- **Time:** ~3.25 hours so far *(Project 2 ~2 h; Project 3 ~35 min; Project 4 ~45 min)*
+- **Time:** ~5.75 hours so far *(Project 2 ~2 h; Project 3 ~35 min; Project 4 ~45 min; Project 5 ~2.5 h)*

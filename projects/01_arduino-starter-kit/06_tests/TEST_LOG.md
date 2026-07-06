@@ -52,3 +52,14 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Result (numbers):** After correcting the dividers, raw values rose to **~1000** under the torch (up from ~50–96 when the dividers were wired inverted). Mapped value = raw ÷ 4 ≈ **250** per channel → near-full brightness. Covering a sensor dropped its channel and the colour shifted (e.g. covering the blue sensor moved the LED toward red/orange).
 - **Pass / fail vs target:** Target = LED colour changes as the light on each sensor changes → **PASS.**
 - **What I'd change:** With one white light and no coloured gels the mix skews **blue/purple** (blue sensor reads highest, green lowest). Balance the three channels with `map()`, or add the coloured gels, for the full colour range.
+
+---
+
+## Test 6 — Mood Cue: servo tracks the potentiometer — 2026-07-06
+
+- **Setup:** Project 5 circuit (10 kΩ potentiometer wiper → A0, servo signal → pin 9, servo power/ground on the +5 V/GND rails, capacitor across the rails), `moodcue_base.ino` uploaded, Serial Monitor at 9600 baud.
+- **Procedure:** Turn the knob slowly from one end to the other and watch both the Serial values and the servo arm.
+- **Result (numbers):** `potVal` sweeps the full **0 → 1023**, `angle` maps to **0 → 179**, and the servo arm rotates to match across its whole range. Holds position steadily when the knob stops.
+- **Pass / fail vs target:** Target = servo arm follows the knob smoothly across its full travel → **PASS.**
+- **Isolation test (diagnostic):** Servo wired **straight to the Arduino** (no breadboard) with a sweep sketch confirmed the servo moves 0/90/180 on its own — proving the servo and code were healthy and the fault was in the breadboard wiring. Kept as a reusable `Servo_Test`.
+- **What I'd change:** Add a paper "mood" dial behind the arm so it points at labelled moods — and as an extension, smooth the motion or add end-stops in code.
