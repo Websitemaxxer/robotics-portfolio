@@ -5,7 +5,10 @@ Breadboard (830-point),1,Arduino,,,,Bundled in kit
 Green LED (5mm),1,,,,,Project 2 — idle indicator (pin 3)
 Red LED (5mm),3,,,,,"Project 2 — 2 alarm LEDs (pins 4 & 5); Project 3 — 3 bar-graph LEDs (pins 2,3,4)"
 TMP36 temperature sensor,1,,,,,Project 3 — analog temperature input on A0
+RGB LED (common cathode),1,,,,,Project 4 — colour output on PWM pins 9/10/11
+Photoresistor (LDR),3,,,,,Project 4 — light sensors on A0/A1/A2
+Coloured gels (red/green/blue),3,,,,,"Project 4 — filters over the sensors for true colour mixing (not used yet)"
 Pushbutton (tactile),1,,,,,Project 2 — switch on pin 2
-Resistor 220 ohm,3,,,,,One per LED (current limiting)
-Resistor 10k ohm,1,,,,,Pull-down for the pushbutton
+Resistor 220 ohm,3,,,,,"One per LED channel (Project 2 LEDs; Project 4 RGB LED red/green/blue)"
+Resistor 10k ohm,4,,,,,"1 pull-down for the pushbutton (Project 2); 3 for the photoresistor dividers (Project 4)"
 Jumper wires,7,,,,,Signal + power/ground on the breadboard

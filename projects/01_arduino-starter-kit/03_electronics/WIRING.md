@@ -68,3 +68,40 @@ temperature rises past ~+2, +4 and +6 °C above a baseline (hardcoded 20 °C).
 - **One LED in backwards.** A single red LED stayed dark while the other two worked — classic polarity fault. Flipped it (long leg → pin side) and it lit. Recognised it instantly this time thanks to the Spaceship build.
 - **Baseline vs room temperature.** The sketch's `baselineTemp` is fixed at 20 °C. My room is warmer, so the meter rests with an LED already on. Not a wiring fault — the baseline just needs setting to my actual room temperature.
 - **TMP36 orientation matters.** It's easy to reverse +5 V and GND on the sensor. With the flat face toward you and legs down: left = +5 V, middle = signal (A0), right = GND. Getting it backwards can overheat the part, so double-check before powering.
+
+## Project 4 — Color Mixing Lamp
+
+### Wiring reference
+
+> ![Color Mixing Lamp wiring](../05_media/photos/colormixing_wired.jpg)
+
+### Pin map
+
+| Component | Board pin | Notes |
+|-----------|-----------|-------|
+| RGB LED — red channel (+ 220 Ω) | D10 (PWM ~) | `analogWrite` |
+| RGB LED — green channel (+ 220 Ω) | D9 (PWM ~) | `analogWrite` |
+| RGB LED — blue channel (+ 220 Ω) | D11 (PWM ~) | `analogWrite` |
+| RGB LED — common leg (longest) | GND | common cathode |
+| Photoresistor 1 (+ 10 kΩ divider) | A0 | "red" sensor |
+| Photoresistor 2 (+ 10 kΩ divider) | A1 | "green" sensor |
+| Photoresistor 3 (+ 10 kΩ divider) | A2 | "blue" sensor |
+
+Each sensor is a voltage divider — **more light must give a higher reading**:
+```
++5V ──[ photoresistor ]──┬──[ 10kΩ ]── GND
+                         └── to analog pin (A0/A1/A2)
+```
+The sketch reads A0/A1/A2, divides each by 4 (0–1023 → 0–255) and `analogWrite`s that to the matching LED channel.
+
+### Power
+
+- **Supply:** USB 5 V — logic only.
+- **Serial:** 9600 baud; the Serial Monitor prints raw + mapped values for each channel (invaluable for debugging).
+
+### Gotchas I hit (this was the hardest build so far)
+
+- **Inverted dividers.** I first had the photoresistor on the *GND* side, so bright light gave a *low* reading (~50–96 under a torch) and the LED barely lit. Swapping so the photoresistor is on the **+5 V side** made bright → high (~1000). Fixed all three.
+- **All three colours dead at once → shared ground.** Individual channels failing separately would leave the other colours working; total darkness means the **common leg → GND** path is broken. Re-seating the RGB LED's common-ground connection fixed it.
+- **USB port dropped mid-build.** All the replugging made the Arduino lose its serial port ("cannot open port…"). Reseated the cable and re-selected the port — not a circuit fault.
+- **Colours skew blue/purple.** With one white torch and no coloured gels the sensors all see the same light, and the blue channel reads highest — so the mix is limited. Expected, not a fault; the gels (or a `map()` rescale) unlock the full range.

@@ -8,6 +8,22 @@
 
 ---
 
+## 2026-07-06 — Project 4: Color Mixing Lamp (my hardest debug so far)
+
+- **Time spent:** ~45 minutes
+- **Goal today:** Build the Color Mixing Lamp — three photoresistors each reading a light level and driving one channel (red / green / blue) of an **RGB LED** through PWM, so the LED's colour changes with the light hitting the sensors. First project using **PWM output** (`analogWrite`) and **three analog inputs** at once.
+- **What I did:** Wired the RGB LED (three colour legs through 220 Ω resistors to PWM pins **9, 10, 11**, common leg to ground) and three photoresistor voltage dividers (each with a 10 kΩ resistor) into **A0, A1, A2**, then uploaded the sketch and watched the raw sensor values in the Serial Monitor.
+- **What worked:** In the end it lights up and the colour shifts as I change the light on the sensors — I confirmed each channel by covering the sensors one at a time and watching the colour move. Demo clip in `05_media/videos/colormixing_demo.mp4`.
+- **What failed / surprised me:** This took the most debugging yet, in layers:
+  1. **Nothing lit at all.** But the Serial Monitor was printing and the numbers changed with light, so the sensors and code were clearly fine — the fault had to be on the **LED side**. I wrote a quick test sketch that drives the RGB LED directly (ignoring the sensors); it lit up, proving the LED, its resistors and pins 9/10/11 were all good.
+  2. **So why dark in the real sketch?** The sensor readings were tiny — only **~50–96 even with a phone torch right on them** — so the LED was being told "barely on." The cause: my three photoresistor dividers were wired **backwards (inverted)**, so *more* light gave a *lower* reading. I swapped the photoresistor and the 10 kΩ resistor to opposite sides of each divider and the readings jumped to **~1000**.
+  3. **Still dark even then.** Because *all three* colours were out together, I reasoned it had to be the part they share — the RGB LED's **common leg to ground**. I re-seated that common-ground connection and it finally lit.
+  4. Somewhere in the middle the Arduino **dropped its USB port** ("cannot open port…") from all the plugging and unplugging — reseated the cable and re-picked the port to get it back.
+- **Biggest lesson:** Split the problem in half. The Serial Monitor proved the input side worked, so I stopped staring at the sensors and focused on the output. And "all three channels dead at once" pointed straight at the **shared ground**, not any single wire.
+- **One quirk (not a fault):** with a single white torch and no coloured gels, the LED mostly shows **blue/purple** — my blue sensor reads highest and green lowest, so the mix is skewed. Adding the gels (or rescaling the ranges in code) would give the full colour range.
+- **Next step:** Project 5 (Mood Cue) — my first **servo/motor**. Possible extension here: use `map()` to balance the three channels so the colours aren't skewed without gels.
+- **Photos:** [Finished build (LED lit purple)](../05_media/photos/colormixing_built.jpg) · [Wiring detail](../05_media/photos/colormixing_wired.jpg)
+
 ## 2026-07-06 — Project 3: Love-o-Meter (my first sensor build)
 
 - **Time spent:** ~35 minutes

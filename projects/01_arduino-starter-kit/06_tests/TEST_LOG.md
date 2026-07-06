@@ -42,3 +42,13 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Result (numbers):** As the temperature rose, the lit-LED count climbed in steps **0 → 1 → 2 → 3**, matching the sketch's thresholds (an extra LED at roughly +2, +4 and +6 °C above the baseline). On cooling, the count stepped back down. Serial printed a continuous temperature stream throughout.
 - **Pass / fail vs target:** Target = more LEDs light as the sensor warms, fewer as it cools, with a live temperature readout → **PASS.**
 - **What I'd change:** The baseline is hardcoded to 20 °C and my room is warmer, so it rests with an LED or two already lit. Tune `baselineTemp` to my measured room temperature (read it off the Serial Monitor) so "all off" is the true resting state — or auto-calibrate it at startup.
+
+---
+
+## Test 5 — Color Mixing Lamp: RGB LED tracks light on the sensors — 2026-07-06
+
+- **Setup:** Project 4 circuit (RGB LED channels on PWM pins 9/10/11 via 220 Ω, common leg to GND; three photoresistor dividers with 10 kΩ on A0/A1/A2), `colormixing_base.ino` uploaded, Serial Monitor at 9600 baud.
+- **Procedure:** Shine a white torch on the sensors and read the raw values; then cover each sensor one at a time and watch the RGB LED colour shift.
+- **Result (numbers):** After correcting the dividers, raw values rose to **~1000** under the torch (up from ~50–96 when the dividers were wired inverted). Mapped value = raw ÷ 4 ≈ **250** per channel → near-full brightness. Covering a sensor dropped its channel and the colour shifted (e.g. covering the blue sensor moved the LED toward red/orange).
+- **Pass / fail vs target:** Target = LED colour changes as the light on each sensor changes → **PASS.**
+- **What I'd change:** With one white light and no coloured gels the mix skews **blue/purple** (blue sensor reads highest, green lowest). Balance the three channels with `map()`, or add the coloured gels, for the full colour range.

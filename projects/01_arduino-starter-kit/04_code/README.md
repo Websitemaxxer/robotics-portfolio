@@ -39,4 +39,10 @@ saying **what you changed and why**.
   bar-graph thermometer, printing the live temperature to the Serial Monitor. *Planned
   extension (`lovemeter_mine.ino`): auto-calibrate the baseline temperature at startup
   instead of hardcoding 20 °C.*
+- **`exercise_04_color_mixing_lamp/colormixing_base.ino`** — Project 4. Reads three
+  photoresistors (A0/A1/A2) and drives an RGB LED with PWM on pins 9/10/11 so its colour
+  follows the light. My hardest debug so far — inverted dividers and a shared common-ground
+  fault (see the [build diary](../01_planning/BUILD_DIARY.md)). *Planned extension
+  (`colormixing_mine.ino`): use `map()` to balance the three channels so the colours
+  aren't skewed toward blue without the coloured gels.*
 
