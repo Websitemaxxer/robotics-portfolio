@@ -65,10 +65,10 @@ I tick these off as projects prove them. Blanks are things I haven't done *yet*.
 - [x] Debug with serial output *(ESP32 Rover — BLE/gesture logging)*
 
 **Practice (how I work)**
-- [ ] Keep a dated build diary for a whole project
-- [ ] Document a real failure and the fix
-- [ ] Record quantitative test results against a target
-- [ ] Produce a short demo video
+- [ ] Keep a dated build diary for a whole project *(Arduino kit in progress — diary started)*
+- [x] Document a real failure and the fix *(Arduino Spaceship — traced 3 wiring faults one by one)*
+- [x] Record quantitative test results against a target *(Arduino Spaceship — pass/fail test log)*
+- [x] Produce a short demo video *(Arduino Spaceship — demo clip)*
 
 ## A note on original vs adapted work
 

@@ -25,3 +25,13 @@ saying **what you changed and why**.
 
 > `exercise_01_blink/` is included as an empty example folder — drop your `.ino` files
 > in and delete its `.gitkeep`. Copy the same two-file pattern for each new exercise.
+
+## Done so far
+
+- **`exercise_02_spaceship_interface/spaceship_base.ino`** — Project 2, the version I
+  actually built and ran (idle → green LED; button held → two red LEDs alternate). See
+  the [build diary](../01_planning/BUILD_DIARY.md) for the debugging story and
+  [wiring](../03_electronics/WIRING.md) for the pin map. *My extension
+  (`spaceship_mine.ino`) is still to come — planned: speed up the alarm the longer the
+  button is held.*
+

@@ -5,38 +5,38 @@ you can check whether you actually hit the success criteria you set here.
 
 ## Intended user / purpose
 
-Who is this for and why does it exist? (Even "for me, to learn X" is a valid purpose — say so.)
-
-> <fill in>
+For me — to build a genuine, hands-on foundation in electronics and embedded programming
+that later projects (rovers, robot arms, sensor systems) will stand on. I'd rather learn
+the fundamentals properly on a known-good kit than fake my way through them.
 
 ## The problem
 
-What specific problem does this solve, or what capability am I trying to build?
-
-> <fill in>
+I can follow high-level robotics tutorials but I don't yet have the underlying skills:
+reading a wiring diagram, building a circuit on a breadboard, understanding pull-down
+resistors and LED polarity, and writing/uploading C/C++ that reacts to inputs. This
+project closes that gap by working through the kit's guided builds and then extending
+selected ones myself.
 
 ## Measurable success criteria
 
-How will I *know* it worked? Use numbers wherever possible — these become the
-targets in `06_tests/TEST_LOG.md` and the "Results at a glance" table.
-
-- <e.g. follows a black line around a 2 m track without leaving it>
-- <e.g. reacts to the sensor in under 100 ms>
-- <criterion 3>
+- Complete the **15 guided projects** in the Arduino Starter Kit.
+- Write **≥ 3 of my own extensions** (a behaviour change or added logic), clearly labelled as mine.
+- Be comfortable enough with **≥ 3 sensors/components** to reuse them in a future project without the book.
+- For each project: circuit behaves as intended, with **at least one documented failure + fix** where things went wrong.
 
 ## Constraints
 
-Budget, time, parts on hand, size/weight limits, safety, skills I still need to learn.
-
-- <fill in>
+- **Budget:** one Arduino Starter Kit (parts limited to what's in the box).
+- **Tools:** no multimeter yet, so I diagnose with test sketches and the Serial Monitor rather than measurements.
+- **Time:** fitting sessions around school; progress is project-by-project, not all at once.
+- **Skills:** starting as a beginner at breadboarding and embedded C.
 
 ## System diagram
 
-Sketch how the parts connect (power → controller → sensors/actuators). A photo of a
-hand-drawn sketch is perfect for a first pass.
+Each guided project has its own small circuit; the per-project wiring lives in
+[`../03_electronics/WIRING.md`](../03_electronics/WIRING.md) with a photo/pin map.
 
-1. Draw it on paper.
-2. Photograph it and save to `05_media/photos/` (e.g. `system_diagram.jpg`).
-3. Link it here:
+Example — **Project 2 (Spaceship Interface):**
 
-> ![System diagram](../05_media/photos/system_diagram.jpg)
+> USB 5 V → Arduino Uno → pushbutton input (D2) decides state → drives green LED (D3, idle)
+> or two alternating red LEDs (D4/D5, alarm).

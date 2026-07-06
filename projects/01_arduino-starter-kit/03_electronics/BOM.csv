@@ -1,2 +1,10 @@
 item,qty,supplier,part_number,unit_cost,total_cost,notes
-Arduino Uno R3,1,Arduino,A000066,90.00,90.00,Example row — replace with your real parts; unit_cost x qty = total_cost
+Arduino Starter Kit (whole kit),1,Arduino,K000007,390.00,390.00,"Approx. UAE retail (Amazon.ae, Jul 2026) for official kit K000007; replace with exact price paid if different. Parts below are bundled in it."
+Arduino Uno R3,1,Arduino,A000066,,,Bundled in kit — controller board
+Breadboard (830-point),1,Arduino,,,,Bundled in kit
+Green LED (5mm),1,,,,,Project 2 — idle indicator (pin 3)
+Red LED (5mm),2,,,,,Project 2 — alarm indicators (pins 4 & 5)
+Pushbutton (tactile),1,,,,,Project 2 — switch on pin 2
+Resistor 220 ohm,3,,,,,One per LED (current limiting)
+Resistor 10k ohm,1,,,,,Pull-down for the pushbutton
+Jumper wires,7,,,,,Signal + power/ground on the breadboard
