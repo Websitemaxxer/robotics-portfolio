@@ -32,3 +32,13 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Result (numbers):** Button open → reads **0** (LOW); button pressed → reads **1** (HIGH). Before fixing the pull-down wiring it read **1** even when open — this test is what confirmed the input was floating.
 - **Pass / fail vs target:** Target = 0 when open, 1 when pressed → **PASS** (after the wiring fix).
 - **What I'd change:** Keep a small reusable "read one pin" diagnostic sketch on hand for future projects — it turned guesswork into a clear yes/no.
+
+---
+
+## Test 4 — Love-o-Meter: LED bar-graph responds to temperature — 2026-07-06
+
+- **Setup:** Project 3 circuit (three red LEDs on D2/D3/D4, TMP36 sensor on A0), `lovemeter_base.ino` uploaded, Serial Monitor open at 9600 baud.
+- **Procedure:** Note the resting LED count, then pinch the flat face of the TMP36 between two fingers for ~20 s and watch both the LEDs and the live temperature in the Serial Monitor; then release and let it cool.
+- **Result (numbers):** As the temperature rose, the lit-LED count climbed in steps **0 → 1 → 2 → 3**, matching the sketch's thresholds (an extra LED at roughly +2, +4 and +6 °C above the baseline). On cooling, the count stepped back down. Serial printed a continuous temperature stream throughout.
+- **Pass / fail vs target:** Target = more LEDs light as the sensor warms, fewer as it cools, with a live temperature readout → **PASS.**
+- **What I'd change:** The baseline is hardcoded to 20 °C and my room is warmer, so it rests with an LED or two already lit. Tune `baselineTemp` to my measured room temperature (read it off the Serial Monitor) so "all off" is the true resting state — or auto-calibrate it at startup.

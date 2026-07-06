@@ -3,7 +3,8 @@ Arduino Starter Kit (whole kit),1,Arduino,K000007,390.00,390.00,"Approx. UAE ret
 Arduino Uno R3,1,Arduino,A000066,,,Bundled in kit — controller board
 Breadboard (830-point),1,Arduino,,,,Bundled in kit
 Green LED (5mm),1,,,,,Project 2 — idle indicator (pin 3)
-Red LED (5mm),2,,,,,Project 2 — alarm indicators (pins 4 & 5)
+Red LED (5mm),3,,,,,"Project 2 — 2 alarm LEDs (pins 4 & 5); Project 3 — 3 bar-graph LEDs (pins 2,3,4)"
+TMP36 temperature sensor,1,,,,,Project 3 — analog temperature input on A0
 Pushbutton (tactile),1,,,,,Project 2 — switch on pin 2
 Resistor 220 ohm,3,,,,,One per LED (current limiting)
 Resistor 10k ohm,1,,,,,Pull-down for the pushbutton

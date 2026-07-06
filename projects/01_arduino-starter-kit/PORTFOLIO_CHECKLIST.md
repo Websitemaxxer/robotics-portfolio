@@ -4,8 +4,9 @@ Tick each item once the evidence actually exists in the repo. The goal is that
 someone can open this project and find proof of every claim. Each line says
 **where** that evidence should live.
 
-> Progress note: ticks below reflect **Project 2 (Spaceship Interface)**, the first
-> completed build. Items will stay ticked as later projects add more evidence.
+> Progress note: ticks below reflect the builds completed so far —
+> **Project 2 (Spaceship Interface)** and **Project 3 (Love-o-Meter)**.
+> Items stay ticked as later projects add more evidence.
 
 ## Core evidence
 
@@ -15,7 +16,7 @@ someone can open this project and find proof of every claim. Each line says
 - [ ] **CAD / version history** — *not applicable to this project* (no custom mechanical parts) → `02_cad/`
 - [x] **BOM with costs** — all parts listed; kit cost ≈ AED 390 (UAE retail — swap in exact price if you have it) → `03_electronics/BOM.csv`
 - [x] **Wiring diagram + pin map** → `03_electronics/WIRING.md`
-- [x] **Code in the repo** — the actual sketch, not a screenshot → `04_code/exercise_02_spaceship_interface/`
+- [x] **Code in the repo** — the actual sketches, not screenshots → `04_code/` (`exercise_02_spaceship_interface/`, `exercise_03_love_o_meter/`)
 - [x] **Dated build diary with photos** — entry per session → `01_planning/BUILD_DIARY.md`
 - [x] **At least one documented failure + fix** — three wiring faults traced and fixed → `01_planning/BUILD_DIARY.md`
 - [x] **Quantitative test results** — numbers vs targets, pass/fail → `06_tests/TEST_LOG.md`

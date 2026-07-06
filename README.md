@@ -60,7 +60,7 @@ I tick these off as projects prove them. Blanks are things I haven't done *yet*.
 
 **Software**
 - [x] Write and upload embedded C/C++ to a microcontroller *(ESP32 Rover)*
-- [ ] Read a sensor and react to it in code
+- [x] Read a sensor and react to it in code *(Arduino Love-o-Meter — TMP36 analog read → LED bar graph)*
 - [x] Drive a motor / actuator from code *(ESP32 Rover — DRV8833 H-bridge + PWM)*
 - [x] Debug with serial output *(ESP32 Rover — BLE/gesture logging)*
 

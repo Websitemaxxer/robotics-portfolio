@@ -37,3 +37,34 @@ Pressing connects D2 to +5 V → reads **HIGH** → green off, reds alternate.
 - **Half-seated jumper.** The +5 V wire feeding the button *looked* connected but wasn't pushed fully into the breadboard hole, so pressing did nothing. "Looks connected" ≠ "is connected."
 - **Signal wire in the wrong pin.** One red never lit because its control wire was in **D7 instead of D5** — the sketch drove D5 correctly, but nothing was plugged in there. Moved it one pin over and it worked.
 - **LED polarity.** Worth remembering: long leg (+) toward the resistor/pin, short leg (flat notch, −) toward GND. An LED in backwards simply stays dark.
+
+## Project 3 — Love-o-Meter
+
+### Wiring reference
+
+> ![Love-o-Meter wiring](../05_media/photos/lovemeter_wired.jpg)
+
+### Pin map
+
+| Component | Board pin | Notes |
+|-----------|-----------|-------|
+| Red LED 1 (+ 220 Ω to GND) | D2 | Lights first (warmest-sensitive step) |
+| Red LED 2 (+ 220 Ω to GND) | D3 | Lights second |
+| Red LED 3 (+ 220 Ω to GND) | D4 | Lights third |
+| TMP36 temperature sensor — Vout | A0 | Analog input (reads the temperature) |
+| TMP36 — +Vs | +5 V | Left pin (flat face toward you, legs down) |
+| TMP36 — GND | GND | Right pin (flat face toward you, legs down) |
+
+Logic: the sketch reads A0, converts it to °C, and lights **0/1/2/3** LEDs as the
+temperature rises past ~+2, +4 and +6 °C above a baseline (hardcoded 20 °C).
+
+### Power
+
+- **Supply:** USB from the computer (5 V) — logic-level only, low current.
+- **Serial:** 9600 baud; open the Serial Monitor to see the live temperature.
+
+### Gotchas I hit
+
+- **One LED in backwards.** A single red LED stayed dark while the other two worked — classic polarity fault. Flipped it (long leg → pin side) and it lit. Recognised it instantly this time thanks to the Spaceship build.
+- **Baseline vs room temperature.** The sketch's `baselineTemp` is fixed at 20 °C. My room is warmer, so the meter rests with an LED already on. Not a wiring fault — the baseline just needs setting to my actual room temperature.
+- **TMP36 orientation matters.** It's easy to reverse +5 V and GND on the sensor. With the flat face toward you and legs down: left = +5 V, middle = signal (A0), right = GND. Getting it backwards can overheat the part, so double-check before powering.

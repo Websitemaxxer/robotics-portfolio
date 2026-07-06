@@ -34,4 +34,9 @@ saying **what you changed and why**.
   [wiring](../03_electronics/WIRING.md) for the pin map. *My extension
   (`spaceship_mine.ino`) is still to come — planned: speed up the alarm the longer the
   button is held.*
+- **`exercise_03_love_o_meter/lovemeter_base.ino`** — Project 3, my first sensor build.
+  Reads a TMP36 temperature sensor on A0 and lights three LEDs (pins 2/3/4) like a
+  bar-graph thermometer, printing the live temperature to the Serial Monitor. *Planned
+  extension (`lovemeter_mine.ino`): auto-calibrate the baseline temperature at startup
+  instead of hardcoding 20 °C.*
 

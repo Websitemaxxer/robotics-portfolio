@@ -8,6 +8,18 @@
 
 ---
 
+## 2026-07-06 — Project 3: Love-o-Meter (my first sensor build)
+
+- **Time spent:** ~35 minutes
+- **Goal today:** Build the Love-o-Meter — a TMP36 temperature sensor driving three red LEDs like a bar-graph thermometer: warm the sensor (pinch it between your fingers) and the LEDs light up one after another. My first project using an **analog sensor** and the **Serial Monitor** instead of a simple on/off input.
+- **What I did:** Wired the three red LEDs (pins 2, 3, 4, each through its own 220 Ω resistor) and the TMP36 sensor to analog pin **A0**, uploaded the sketch, and opened the Serial Monitor at 9600 baud to watch the live temperature. The code lights 0, 1, 2 or 3 LEDs depending on how far the temperature climbs above a baseline.
+- **What worked:** Once everything was seated properly it did exactly what it should — the LEDs step up one by one as the sensor warms and step back down as it cools, and the temperature readout in the Serial Monitor tracks it in real time. Photos in `05_media/photos/`, demo clip in `05_media/videos/lovemeter_demo.mp4`.
+- **What failed / surprised me:** One of the three red LEDs simply wouldn't light while the other two did. Because I'd already met this exact failure on the Spaceship build, I recognised it straight away instead of hunting around — a dead LED sitting next to working ones almost always means it's in **backwards**.
+- **What I changed because of it:** Pulled that LED out and flipped it so the **long leg (+)** faced the resistor/pin side and the **short leg (flat notch, −)** faced ground. It lit up immediately and the meter worked end to end.
+- **Biggest lesson:** The fault that cost me a long time on the Spaceship project took seconds here — I knew the symptom (one LED dark while its neighbours work → check polarity first) and went straight to the fix. Good sign the debugging habits from the last build are actually sticking.
+- **Next step:** Tune the baseline temperature to my room (it's hardcoded to 20 °C, which is cooler than here) — a natural first **extension** would be to auto-calibrate the baseline at startup. Then on to Project 4 (Color Mixing Lamp).
+- **Photos:** [Finished build](../05_media/photos/lovemeter_built.jpg) · [Wiring detail](../05_media/photos/lovemeter_wired.jpg)
+
 ## 2026-07-06 — Project 2: Spaceship Interface (wiring + a lot of debugging)
 
 - **Time spent:** ~2 hours (mostly debugging, not building)
