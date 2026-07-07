@@ -223,3 +223,38 @@ switch is read each loop; when its state changes, all LEDs clear and the timer r
 - **`millis()` timing, not `delay()`.** The sketch counts time with `millis()` so it can watch the tilt switch *and* keep timing at once. A `delay()` would freeze the whole program and miss tilts.
 - **Interval is long by default.** `interval = 600000` ms = 10 minutes per LED (a 1-hour timer). Lower it (e.g. to ~2000) to watch it march quickly while testing, then set it back.
 - **Tilt switch isn't polarity-sensitive** — it's just a switch that opens/closes when tilted; either leg orientation works.
+
+## Project 11 — Crystal Ball
+
+*(Projects 9 & 10 skipped for now — they need a 9V battery.)*
+
+### Wiring reference
+
+> ![Crystal Ball wiring](../05_media/photos/crystalball_wired.jpg)
+
+### Pin map — 16×2 LCD (`LiquidCrystal(12, 11, 5, 4, 3, 2)`)
+
+| LCD pin | Connects to | Notes |
+|---------|-------------|-------|
+| VSS (1) | GND | |
+| VDD (2) | +5 V | |
+| Vo (3) | pot wiper | **contrast** — the pot's only job |
+| RS (4) | D12 | register select |
+| RW (5) | GND | write mode |
+| E (6) | D11 | enable |
+| D4–D7 (11–14) | D5, D4, D3, D2 | 4-bit data |
+| A (15) | +5 V (via resistor) | backlight + |
+| K (16) | GND | backlight − |
+| Tilt switch | D6 | resets/triggers a new answer |
+
+### Power
+
+- **Supply:** USB 5 V.
+- **Contrast pot:** wiper → Vo, and **both** outer legs to +5 V and GND.
+
+### Gotchas I hit
+
+- **Blank screen, pot did nothing → the contrast pot.** Backlight on but no text, and the pot had no effect. Forcing **Vo straight to GND** made text appear — proving the LCD, power and data were all fine and the fault was purely the contrast pot.
+- **A pot needs BOTH outer legs.** Mine had only one outer leg connected, so the wiper couldn't sweep any voltage — the pot "did nothing." Connecting both outer legs (5 V and GND) fixed it.
+- **So many wires.** The LCD alone needs ~12 connections; with the pot and tilt switch it was the most wire-dense build so far and easy to lose track of. Working slowly pin-by-pin from LCD pin 1 is what kept it straight.
+- **Count LCD pins from pin 1.** Off-by-one on the 16-pin header breaks everything — find the marked pin 1 and count from there.

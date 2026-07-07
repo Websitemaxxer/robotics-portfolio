@@ -67,4 +67,10 @@ saying **what you changed and why**.
   resets them — an LED sand timer. First use of non-blocking `millis()` timing so it can
   count *and* watch the switch at once. *Planned extension (`hourglass_mine.ino`): a knob
   to set the total timer length.*
+- **`exercise_11_crystal_ball/crystalball_base.ino`** — Project 11, my first LCD. A 16×2
+  screen (`LiquidCrystal`) shows a prompt and, when a tilt switch (pin 6) fires, prints a
+  random magic-8-ball answer. Debug: a blank screen traced to the contrast pot (only one
+  outer leg connected) by forcing Vo to GND (see the
+  [build diary](../01_planning/BUILD_DIARY.md)). *(Projects 9 & 10 skipped — need a 9V
+  battery.) Planned extension (`crystalball_mine.ino`): custom answers / a shake animation.*
 

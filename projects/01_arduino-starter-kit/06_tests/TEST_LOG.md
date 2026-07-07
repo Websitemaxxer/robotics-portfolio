@@ -93,3 +93,14 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Result (numbers):** With interval ≈ 2 s, an LED lit roughly every 2 seconds, advancing 1 → 6 across the row. Tilting the board turned all six LEDs off and restarted the sequence. At the book's 600000 ms that's one LED every 10 minutes (a 1-hour timer across 6 LEDs).
 - **Pass / fail vs target:** Target = LEDs advance at a fixed interval and a tilt resets them → **PASS.**
 - **What I'd change:** Make the interval a named value that's easy to change for different timer lengths — an extension could add a potentiometer to set the total time.
+
+---
+
+## Test 10 — Crystal Ball: prompt shows and a tilt gives a random answer — 2026-07-07
+
+- **Setup:** Project 11 circuit (16×2 LCD on RS/E/D4–D7, tilt switch on pin 6, contrast pot on Vo), `crystalball_base.ino` uploaded. Contrast pot adjusted for readable text.
+- **Procedure:** Power on and read the prompt; tilt the board several times and read each answer.
+- **Result (numbers):** On startup the LCD shows the two-line prompt. Each tilt cleared the screen and displayed one of **8 possible random answers** — over ~10 tilts I saw several different replies, confirming the `random(8)` is being read and varied.
+- **Pass / fail vs target:** Target = readable prompt on power-up, and a fresh random answer on each tilt → **PASS.**
+- **Diagnostic that cracked it:** Screen was blank with the pot doing nothing → jumpering the LCD's Vo pin straight to GND forced max contrast and text appeared, proving the fault was purely the contrast pot (only one outer leg connected).
+- **What I'd change:** Add more/custom answer phrases, or a "shake harder" animation — small code tweaks now that the LCD works.

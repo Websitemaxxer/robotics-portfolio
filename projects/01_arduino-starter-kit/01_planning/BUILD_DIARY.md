@@ -8,6 +8,20 @@
 
 ---
 
+## 2026-07-07 — Project 11: Crystal Ball (my first LCD — a digital magic 8-ball)
+
+> Note: I skipped Projects 9 and 10 (Motorized Pinwheel, Zoetrope) for now — they need a 9V battery I don't have yet. I'll come back to them.
+
+- **Time spent:** ~1 hour
+- **Goal today:** Build the Crystal Ball — a **16×2 LCD** that shows "Ask the Crystal Ball!", and when you **tilt it**, displays a random answer (Yes / No / Ask again / …) like a magic 8-ball. My first project with an **LCD screen** and the `LiquidCrystal` library.
+- **What I did:** Wired the LCD's control and data lines to the Arduino (RS, E, D4–D7), a **tilt switch** on pin 6, and a **potentiometer** to set the LCD contrast. The sketch prints the prompt, then on each tilt picks a random reply and shows it.
+- **What worked:** Once the contrast was sorted, the prompt shows on power-up and every tilt gives a fresh random answer. Photos in `05_media/photos/`, demo clip in `05_media/videos/crystalball_demo.mp4`.
+- **What failed / surprised me:** The backlight came on but **nothing showed on the screen**, and turning the contrast **pot did nothing at all.** That "pot does nothing" was the clue. I ran a clean test: I disconnected the pot from the LCD's contrast pin (Vo) and jumpered **Vo straight to GND** to force maximum contrast — and text appeared instantly. That proved the LCD, its power, *and* all the data wiring were fine, and the **only** problem was the contrast pot. The pot did nothing because **only one of its two outer legs was connected**, so the wiper had no voltage range to sweep. Reconnecting *both* outer legs (one to +5 V, one to GND) brought the adjustable contrast back.
+- **What made it hard:** the sheer **number of wires** — the LCD alone needs a dozen connections, so with the pot and tilt switch it was the most wire-dense build so far and genuinely confusing to keep track of what went where.
+- **Biggest lesson:** For a blank LCD, **force Vo to GND** to test the display on its own — it isolates the screen from the contrast pot in seconds. And a potentiometer needs **both** outer legs connected to do anything; with only one, it's dead.
+- **Next step:** Projects 9 & 10 need a 9V battery I don't have, so I'm moving on to Project 12 (Knock Lock).
+- **Photos:** [Finished build](../05_media/photos/crystalball_built.jpg) · [Wiring detail](../05_media/photos/crystalball_wired.jpg)
+
 ## 2026-07-07 — Project 8: Digital Hourglass (an LED sand timer)
 
 - **Time spent:** ~25 minutes
