@@ -8,6 +8,19 @@
 
 ---
 
+## 2026-07-07 — Project 6: Light Theremin (playing sound with light)
+
+- **Time spent:** ~35 minutes
+- **Goal today:** Build the Light Theremin — a photoresistor whose light level sets the pitch of a tone from a piezo, so waving my hand over the sensor "plays" it like the sci-fi instrument. Back to sensors after the servo, and my first time making **sound** with `tone()`.
+- **What I did:** Wired a photoresistor voltage divider into **A0** and a piezo across **pin 8** and GND. The sketch spends its first 5 seconds **auto-calibrating** (onboard LED on while it learns the darkest and brightest readings), then maps the live light level to a pitch of 50–4000 Hz.
+- **What worked:** After fixing the sensor, waving my hand over the photoresistor sweeps the pitch up and down smoothly — a proper theremin swoop. Photos in `05_media/photos/`, demo clip in `05_media/videos/theremin_demo.mp4`.
+- **What failed / surprised me:** At first the piezo made sound but the **pitch wouldn't change** no matter how I moved my hand. I checked the sensor with a little test sketch that prints `analogRead(A0)` — and it read a **flat 0**, never moving. That meant no voltage was reaching A0 through the sensor. The cause turned out to be a **wrong resistor value** in the divider — I'd grabbed the wrong one, so the divider wasn't working. Swapping in the correct resistor made the readings sweep properly.
+- **What I changed because of it:** Replaced the resistor, confirmed the sensor swept its full range on the test sketch, then went back to the Theremin.
+- **One thing that fooled me:** the Theremin sketch has **no Serial output**, so its Serial Monitor is always blank — I briefly thought *that* was the bug, but it's normal. The real diagnosis came from the separate test sketch. Also the **5-second calibration** matters: you have to wave your hand over the sensor (full dark to full bright) during the startup window, or the pitch range comes out too narrow.
+- **Biggest lesson:** Check the *value* of a part, not just that something's plugged in. A resistor of the wrong value looks identical to the right one but quietly breaks the circuit — the flat-0 reading on the test sketch is what exposed it.
+- **Next step:** Project 7 (Keyboard Instrument) — buttons and a resistor ladder read on one analog pin to play different notes.
+- **Photos:** [Finished build](../05_media/photos/theremin_built.jpg) · [Wiring detail](../05_media/photos/theremin_wired.jpg)
+
 ## 2026-07-06 — Project 5: Mood Cue (my first motor — and my longest debug)
 
 - **Time spent:** ~2.5 hours

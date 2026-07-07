@@ -6,7 +6,8 @@ Green LED (5mm),1,,,,,Project 2 — idle indicator (pin 3)
 Red LED (5mm),3,,,,,"Project 2 — 2 alarm LEDs (pins 4 & 5); Project 3 — 3 bar-graph LEDs (pins 2,3,4)"
 TMP36 temperature sensor,1,,,,,Project 3 — analog temperature input on A0
 RGB LED (common cathode),1,,,,,Project 4 — colour output on PWM pins 9/10/11
-Photoresistor (LDR),3,,,,,Project 4 — light sensors on A0/A1/A2
+Photoresistor (LDR),3,,,,,"Project 4 — 3 light sensors on A0/A1/A2; Project 6 — 1 as the theremin light sensor"
+Piezo (buzzer),1,,,,,Project 6 — sound output on pin 8
 Coloured gels (red/green/blue),3,,,,,"Project 4 — filters over the sensors for true colour mixing (not used yet)"
 Servo motor (SM-S2309S),1,,,,,Project 5 — signal on pin 9; middle wire is +5 V power
 Potentiometer 10k ohm (rotary),1,,,,,Project 5 — knob on A0 (wiper = lone middle terminal)

@@ -51,4 +51,10 @@ saying **what you changed and why**.
   confusion, finally cracked by isolating the servo straight to the Arduino (see the
   [build diary](../01_planning/BUILD_DIARY.md)). *Planned extension (`moodcue_mine.ino`):
   add a paper "mood" dial and smooth/limit the motion in code.*
+- **`exercise_06_light_theremin/theremin_base.ino`** — Project 6. A photoresistor on A0
+  sets the pitch of a piezo on pin 8 (`tone()`), so waving a hand over the sensor plays it.
+  The sketch auto-calibrates its light range for the first 5 seconds. Debug: a flat-0 sensor
+  reading traced to a wrong resistor value in the divider (see the
+  [build diary](../01_planning/BUILD_DIARY.md)). *Planned extension (`theremin_mine.ino`):
+  a button to re-trigger calibration on demand instead of only at startup.*
 

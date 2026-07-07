@@ -138,3 +138,32 @@ Logic: read A0 (0–1023) → `map()` to a servo angle (0–179) → `myServo.wr
 - **Wire colour ≠ function.** My servo's colours didn't match the diagram. The rule: **the middle wire is power** regardless of colour; the outer wires are signal and ground. Go by position.
 - **USB port kept dropping** from repeated replugging — reseat cable, re-select port.
 - **Isolation test cracked it.** Wiring the servo straight to the Arduino with a sweep sketch proved the servo and code were fine — so the fault was the **breadboard connections** (loose/mis-seated), not the servo.
+
+## Project 6 — Light Theremin
+
+### Wiring reference
+
+> ![Light Theremin wiring](../05_media/photos/theremin_wired.jpg)
+
+### Pin map
+
+| Component | Board pin | Notes |
+|-----------|-----------|-------|
+| Photoresistor (+ 10 kΩ divider) | A0 | Light level → sets the pitch |
+| Piezo — one leg | D8 | `tone()` drives the sound |
+| Piezo — other leg | GND | Not polarity-sensitive |
+| Onboard LED | D13 (built in) | Lit during the 5-second calibration; no wiring |
+
+Divider on A0: **+5 V → photoresistor → junction (A0) → 10 kΩ → GND**. The sketch
+auto-calibrates min/max for the first 5 seconds, then maps the reading to 50–4000 Hz.
+
+### Power
+
+- **Supply:** USB 5 V — logic only.
+- **No Serial:** the Theremin sketch prints nothing, so a blank Serial Monitor is normal.
+
+### Gotchas I hit
+
+- **Wrong resistor value → A0 stuck at 0.** The divider had the wrong resistor, so no voltage reached A0 and the pitch never changed (though the piezo still played). A test sketch printing `analogRead(A0)` showed a flat 0 — swapping in the correct resistor fixed it. **Check the resistor's value, not just that one is present.**
+- **Blank Serial is a red herring.** This sketch has no `Serial.begin`/`print`, so the empty monitor is expected — diagnose the sensor with a separate test sketch, not this one.
+- **5-second calibration.** Wave a hand from full-dark to full-bright over the sensor while the onboard LED is on at startup, or the pitch range comes out too narrow. Press reset to recalibrate.

@@ -63,3 +63,13 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Pass / fail vs target:** Target = servo arm follows the knob smoothly across its full travel → **PASS.**
 - **Isolation test (diagnostic):** Servo wired **straight to the Arduino** (no breadboard) with a sweep sketch confirmed the servo moves 0/90/180 on its own — proving the servo and code were healthy and the fault was in the breadboard wiring. Kept as a reusable `Servo_Test`.
 - **What I'd change:** Add a paper "mood" dial behind the arm so it points at labelled moods — and as an extension, smooth the motion or add end-stops in code.
+
+---
+
+## Test 7 — Light Theremin: pitch tracks the light — 2026-07-07
+
+- **Setup:** Project 6 circuit (photoresistor divider on A0, piezo on pin 8 to GND), `theremin_base.ino` uploaded. Board reset so the 5-second calibration runs; hand waved from full-dark to full-bright during the calibration window.
+- **Procedure:** After the onboard LED turns off, move a hand over the sensor and listen to the piezo.
+- **Result (numbers):** Pitch sweeps across the sketch's full **50 Hz → 4000 Hz** range as the light on the sensor changes — low pitch in shadow, high pitch in bright light. A separate diagnostic sketch confirmed the raw A0 reading sweeps its full range (it read a flat 0 before the resistor was fixed).
+- **Pass / fail vs target:** Target = pitch changes smoothly with the light on the sensor → **PASS.**
+- **What I'd change:** The pitch range depends on the 5-second calibration — a nice extension would be a button to re-trigger calibration on demand instead of only at startup.
