@@ -12,7 +12,8 @@ Coloured gels (red/green/blue),3,,,,,"Project 4 — filters over the sensors for
 Servo motor (SM-S2309S),1,,,,,Project 5 — signal on pin 9; middle wire is +5 V power
 Potentiometer 10k ohm (rotary),1,,,,,Project 5 — knob on A0 (wiper = lone middle terminal)
 Electrolytic capacitor 100 uF,1,,,,,Project 5 — across the power rails to steady the servo's current draw
-Pushbutton (tactile),1,,,,,Project 2 — switch on pin 2
+Pushbutton (tactile),4,,,,,"Project 2 — 1 switch on pin 2; Project 7 — 4 keys feeding the resistor ladder into A0"
+Assorted resistors (ladder),4,,,,,"Project 7 — different values chained in series so each key reads a distinct value on A0 (from the kit's resistor assortment)"
 Resistor 220 ohm,3,,,,,"One per LED channel (Project 2 LEDs; Project 4 RGB LED red/green/blue)"
 Resistor 10k ohm,4,,,,,"1 pull-down for the pushbutton (Project 2); 3 for the photoresistor dividers (Project 4)"
 Jumper wires,7,,,,,Signal + power/ground on the breadboard

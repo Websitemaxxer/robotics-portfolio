@@ -8,6 +8,18 @@
 
 ---
 
+## 2026-07-07 — Project 7: Keyboard Instrument (a 4-key mini piano)
+
+- **Time spent:** ~25 minutes
+- **Goal today:** Build the Keyboard Instrument — four pushbuttons that each play a different note on the piezo, using a **resistor ladder** so all four buttons share a single analog pin (A0). First time reading multiple buttons through one pin instead of one pin each.
+- **What I did:** Wired four pushbuttons into a chain of resistors (the "ladder") feeding **A0**, and the piezo across **pin 8** and GND. Each button connects a different point of the ladder to A0, so pressing each one gives a distinct reading (~1023, ~1000, ~510, ~7) that the sketch turns into a note (C, D, E, F).
+- **What worked:** Once wired right, each button plays its own note and releasing goes silent. The Serial Monitor shows the reading jump to a different value for each key. Photos in `05_media/photos/`, demo clip in `05_media/videos/keyboard_demo.mp4`.
+- **What failed / surprised me:** My biggest problem was the **spacing on the breadboard** — I didn't line the buttons and resistors up in the right rows/columns, so the ladder wasn't actually chaining the resistors in series and the button readings came out wrong (buttons giving the same value or nothing). Once I fixed the layout so each resistor and button sat in the correct columns, the readings separated out properly.
+- **What I changed because of it:** Re-placed the buttons and resistors with the correct spacing so the ladder formed a proper series chain into A0 — then each key read its own distinct value.
+- **Biggest lesson:** On a breadboard, **spacing is wiring.** Two components a column off from where they should be makes a completely different circuit even though everything "looks" connected. Getting the ladder's columns exactly right is what made the four keys read as four separate values.
+- **Next step:** Project 8 (Digital Hourglass) — an LED "sand timer" driven by a tilt switch and `millis()` timing.
+- **Photos:** [Finished build](../05_media/photos/keyboard_built.jpg) · [Wiring detail](../05_media/photos/keyboard_wired.jpg)
+
 ## 2026-07-07 — Project 6: Light Theremin (playing sound with light)
 
 - **Time spent:** ~35 minutes

@@ -73,3 +73,13 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Result (numbers):** Pitch sweeps across the sketch's full **50 Hz → 4000 Hz** range as the light on the sensor changes — low pitch in shadow, high pitch in bright light. A separate diagnostic sketch confirmed the raw A0 reading sweeps its full range (it read a flat 0 before the resistor was fixed).
 - **Pass / fail vs target:** Target = pitch changes smoothly with the light on the sensor → **PASS.**
 - **What I'd change:** The pitch range depends on the 5-second calibration — a nice extension would be a button to re-trigger calibration on demand instead of only at startup.
+
+---
+
+## Test 8 — Keyboard Instrument: each button plays its own note — 2026-07-07
+
+- **Setup:** Project 7 circuit (four pushbuttons feeding a resistor ladder into A0, piezo on pin 8), `keyboard_base.ino` uploaded, Serial Monitor at 9600 baud.
+- **Procedure:** Press each of the four buttons in turn; read the `keyVal` printed for each and listen to the note.
+- **Result (numbers):** Each button produced a distinct reading — roughly **1023 / 1000 / 510 / 7** — matching the four ranges in the sketch, and each played its own note (C / D / E / F). No button pressed = silence.
+- **Pass / fail vs target:** Target = four buttons, four different notes, silence when released → **PASS.**
+- **What I'd change:** If a button's real reading drifts outside its code range (resistor tolerance), widen that range to the value the Serial Monitor actually shows. As an extension, add more keys/octaves by extending the ladder.

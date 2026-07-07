@@ -57,4 +57,9 @@ saying **what you changed and why**.
   reading traced to a wrong resistor value in the divider (see the
   [build diary](../01_planning/BUILD_DIARY.md)). *Planned extension (`theremin_mine.ino`):
   a button to re-trigger calibration on demand instead of only at startup.*
+- **`exercise_07_keyboard_instrument/keyboard_base.ino`** — Project 7. Four pushbuttons
+  share one analog pin (A0) via a resistor ladder, so each key reads a distinct value and
+  plays its own note on the piezo (pin 8). Debug: the breadboard spacing had to be exact so
+  the ladder chained in series (see the [build diary](../01_planning/BUILD_DIARY.md)).
+  *Planned extension (`keyboard_mine.ino`): add more keys/octaves by extending the ladder.*
 

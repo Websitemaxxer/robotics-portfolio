@@ -167,3 +167,32 @@ auto-calibrates min/max for the first 5 seconds, then maps the reading to 50–4
 - **Wrong resistor value → A0 stuck at 0.** The divider had the wrong resistor, so no voltage reached A0 and the pitch never changed (though the piezo still played). A test sketch printing `analogRead(A0)` showed a flat 0 — swapping in the correct resistor fixed it. **Check the resistor's value, not just that one is present.**
 - **Blank Serial is a red herring.** This sketch has no `Serial.begin`/`print`, so the empty monitor is expected — diagnose the sensor with a separate test sketch, not this one.
 - **5-second calibration.** Wave a hand from full-dark to full-bright over the sensor while the onboard LED is on at startup, or the pitch range comes out too narrow. Press reset to recalibrate.
+
+## Project 7 — Keyboard Instrument
+
+### Wiring reference
+
+> ![Keyboard Instrument wiring](../05_media/photos/keyboard_wired.jpg)
+
+### Pin map
+
+| Component | Board pin | Notes |
+|-----------|-----------|-------|
+| Resistor ladder (4 buttons) | A0 | Each button gives a distinct reading |
+| Piezo — one leg | D8 | `tone()` plays the note |
+| Piezo — other leg | GND | Not polarity-sensitive |
+
+How it works: four pushbuttons each connect a **different point of a chain of
+resistors** to A0. Pressing each button makes a different voltage divider, so A0 reads
+a distinct value per key (~1023 / ~1000 / ~510 / ~7), which the sketch maps to four
+notes. This lets **four buttons share one analog pin** instead of needing four pins.
+
+### Power
+
+- **Supply:** USB 5 V.
+- **Serial:** 9600 baud; prints `keyVal` — invaluable for checking each button's reading and tuning the code ranges.
+
+### Gotchas I hit
+
+- **Spacing = wiring (my main problem).** The resistor ladder only works if each resistor and button sits in the **exact right columns** so the resistors chain in series into A0. I had components a column off, so the ladder wasn't chaining and buttons read the same/wrong values. Fixing the layout so each part was in the correct column separated the four readings out.
+- **Reading slightly off the code's range.** Resistor tolerances can shift a button's `keyVal` just outside the sketch's window (e.g. reads 985, code wants 990–1010). Read the real value in the Serial Monitor and widen that range in the code — no rewiring needed.
