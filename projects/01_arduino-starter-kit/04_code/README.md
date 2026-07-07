@@ -62,4 +62,9 @@ saying **what you changed and why**.
   plays its own note on the piezo (pin 8). Debug: the breadboard spacing had to be exact so
   the ladder chained in series (see the [build diary](../01_planning/BUILD_DIARY.md)).
   *Planned extension (`keyboard_mine.ino`): add more keys/octaves by extending the ladder.*
+- **`exercise_08_digital_hourglass/hourglass_base.ino`** — Project 8. Six LEDs (pins 2–7)
+  light one at a time every `interval` using `millis()` timing, and a tilt switch on pin 8
+  resets them — an LED sand timer. First use of non-blocking `millis()` timing so it can
+  count *and* watch the switch at once. *Planned extension (`hourglass_mine.ino`): a knob
+  to set the total timer length.*
 

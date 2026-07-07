@@ -3,7 +3,7 @@ Arduino Starter Kit (whole kit),1,Arduino,K000007,390.00,390.00,"Approx. UAE ret
 Arduino Uno R3,1,Arduino,A000066,,,Bundled in kit — controller board
 Breadboard (830-point),1,Arduino,,,,Bundled in kit
 Green LED (5mm),1,,,,,Project 2 — idle indicator (pin 3)
-Red LED (5mm),3,,,,,"Project 2 — 2 alarm LEDs (pins 4 & 5); Project 3 — 3 bar-graph LEDs (pins 2,3,4)"
+Red LED (5mm),6,,,,,"Project 2 — 2 alarm LEDs; Project 3 — 3 bar-graph LEDs; Project 8 — 6 hourglass LEDs (pins 2-7)"
 TMP36 temperature sensor,1,,,,,Project 3 — analog temperature input on A0
 RGB LED (common cathode),1,,,,,Project 4 — colour output on PWM pins 9/10/11
 Photoresistor (LDR),3,,,,,"Project 4 — 3 light sensors on A0/A1/A2; Project 6 — 1 as the theremin light sensor"
@@ -14,6 +14,7 @@ Potentiometer 10k ohm (rotary),1,,,,,Project 5 — knob on A0 (wiper = lone midd
 Electrolytic capacitor 100 uF,1,,,,,Project 5 — across the power rails to steady the servo's current draw
 Pushbutton (tactile),4,,,,,"Project 2 — 1 switch on pin 2; Project 7 — 4 keys feeding the resistor ladder into A0"
 Assorted resistors (ladder),4,,,,,"Project 7 — different values chained in series so each key reads a distinct value on A0 (from the kit's resistor assortment)"
-Resistor 220 ohm,3,,,,,"One per LED channel (Project 2 LEDs; Project 4 RGB LED red/green/blue)"
+Resistor 220 ohm,6,,,,,"One per LED (Project 2 LEDs; Project 4 RGB channels; Project 8 — 6 hourglass LEDs)"
+Tilt switch,1,,,,,Project 8 — digital input on pin 8; resets the hourglass when tilted
 Resistor 10k ohm,4,,,,,"1 pull-down for the pushbutton (Project 2); 3 for the photoresistor dividers (Project 4)"
 Jumper wires,7,,,,,Signal + power/ground on the breadboard

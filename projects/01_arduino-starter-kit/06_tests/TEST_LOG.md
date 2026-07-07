@@ -83,3 +83,13 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Result (numbers):** Each button produced a distinct reading — roughly **1023 / 1000 / 510 / 7** — matching the four ranges in the sketch, and each played its own note (C / D / E / F). No button pressed = silence.
 - **Pass / fail vs target:** Target = four buttons, four different notes, silence when released → **PASS.**
 - **What I'd change:** If a button's real reading drifts outside its code range (resistor tolerance), widen that range to the value the Serial Monitor actually shows. As an extension, add more keys/octaves by extending the ladder.
+
+---
+
+## Test 9 — Digital Hourglass: LEDs advance and reset on tilt — 2026-07-07
+
+- **Setup:** Project 8 circuit (six LEDs on pins 2–7, tilt switch on pin 8), `hourglass_base.ino` uploaded. For a quick test the `interval` was temporarily lowered from 600000 ms to ~2000 ms.
+- **Procedure:** Watch the LEDs light up one by one over the interval, then tilt the board and confirm they clear and the count restarts.
+- **Result (numbers):** With interval ≈ 2 s, an LED lit roughly every 2 seconds, advancing 1 → 6 across the row. Tilting the board turned all six LEDs off and restarted the sequence. At the book's 600000 ms that's one LED every 10 minutes (a 1-hour timer across 6 LEDs).
+- **Pass / fail vs target:** Target = LEDs advance at a fixed interval and a tilt resets them → **PASS.**
+- **What I'd change:** Make the interval a named value that's easy to change for different timer lengths — an extension could add a potentiometer to set the total time.

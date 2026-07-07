@@ -8,6 +8,18 @@
 
 ---
 
+## 2026-07-07 — Project 8: Digital Hourglass (an LED sand timer)
+
+- **Time spent:** ~25 minutes
+- **Goal today:** Build the Digital Hourglass — six LEDs that light up one at a time at a fixed interval (like sand piling up), which reset when you tilt the whole thing over, using a **tilt switch**. First project using **`millis()` timing** and a tilt switch.
+- **What I did:** Wired six red LEDs to pins 2–7 (each through a resistor) and a tilt switch to pin 8. The sketch uses `millis()` to light the next LED every `interval`, and watches the tilt switch — when it flips, all LEDs clear and the timer restarts.
+- **What worked:** Everything, first try — no debugging needed. The LEDs advance one by one over time, and tilting the board resets them, just like flipping a real hourglass. Photos in `05_media/photos/`, demo clip in `05_media/videos/hourglass_demo.mp4`.
+- **What failed / surprised me:** Honestly nothing broke this time — a rare clean build. What made it smooth was that the pieces were all things I'd already met: driving LEDs on multiple pins (Spaceship), reading a switch (Spaceship's button), and a `for` loop to set up the pins. The one **new idea** was `millis()` — timing without `delay()`, so the board can watch the tilt switch *and* keep counting at the same time (a `delay()` would freeze it).
+- **What I changed because of it:** Nothing wiring-wise. To *see* it work quickly I temporarily lowered the `interval` (it's 600000 ms = 10 minutes per LED in the book version) to a couple of seconds, watched the LEDs march, then set it back.
+- **Biggest lesson:** `millis()` vs `delay()` — using `millis()` lets the program do timing *and* respond to input at once, instead of stopping dead. That's the first "real" programming pattern (non-blocking timing) rather than just wiring, and it'll matter for anything that has to do two things at once.
+- **Next step:** Project 9 (Motorized Pinwheel) — driving a DC motor with a transistor.
+- **Photos:** [Finished build](../05_media/photos/hourglass_built.jpg) · [Wiring detail](../05_media/photos/hourglass_wired.jpg)
+
 ## 2026-07-07 — Project 7: Keyboard Instrument (a 4-key mini piano)
 
 - **Time spent:** ~25 minutes

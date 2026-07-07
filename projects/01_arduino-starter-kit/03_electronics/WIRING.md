@@ -196,3 +196,30 @@ notes. This lets **four buttons share one analog pin** instead of needing four p
 
 - **Spacing = wiring (my main problem).** The resistor ladder only works if each resistor and button sits in the **exact right columns** so the resistors chain in series into A0. I had components a column off, so the ladder wasn't chaining and buttons read the same/wrong values. Fixing the layout so each part was in the correct column separated the four readings out.
 - **Reading slightly off the code's range.** Resistor tolerances can shift a button's `keyVal` just outside the sketch's window (e.g. reads 985, code wants 990–1010). Read the real value in the Serial Monitor and widen that range in the code — no rewiring needed.
+
+## Project 8 — Digital Hourglass
+
+### Wiring reference
+
+> ![Digital Hourglass wiring](../05_media/photos/hourglass_wired.jpg)
+
+### Pin map
+
+| Component | Board pin | Notes |
+|-----------|-----------|-------|
+| LED 1–6 (each + resistor to GND) | D2, D3, D4, D5, D6, D7 | Light up one at a time |
+| Tilt switch | D8 | Digital input; flips state when tilted |
+
+How it works: `millis()` lights the next LED (pins 2→7) every `interval`. The tilt
+switch is read each loop; when its state changes, all LEDs clear and the timer resets.
+
+### Power
+
+- **Supply:** USB 5 V — logic only.
+- **No external supply needed** — six LEDs plus a switch draw very little.
+
+### Notes
+
+- **`millis()` timing, not `delay()`.** The sketch counts time with `millis()` so it can watch the tilt switch *and* keep timing at once. A `delay()` would freeze the whole program and miss tilts.
+- **Interval is long by default.** `interval = 600000` ms = 10 minutes per LED (a 1-hour timer). Lower it (e.g. to ~2000) to watch it march quickly while testing, then set it back.
+- **Tilt switch isn't polarity-sensitive** — it's just a switch that opens/closes when tilted; either leg orientation works.
