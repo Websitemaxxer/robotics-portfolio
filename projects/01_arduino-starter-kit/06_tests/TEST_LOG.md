@@ -104,3 +104,14 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Pass / fail vs target:** Target = readable prompt on power-up, and a fresh random answer on each tilt → **PASS.**
 - **Diagnostic that cracked it:** Screen was blank with the pot doing nothing → jumpering the LCD's Vo pin straight to GND forced max contrast and text appeared, proving the fault was purely the contrast pot (only one outer leg connected).
 - **What I'd change:** Add more/custom answer phrases, or a "shake harder" animation — small code tweaks now that the LCD works.
+
+---
+
+## Test 11 — Knock Lock: lock on button, unlock on 3 knocks — 2026-07-07
+
+- **Setup:** Project 12 circuit (piezo on A0 with 1 MΩ across it, button on pin 2 with 10 kΩ pull-down, LEDs on 3/4/5, servo on pin 9), `knocklock_base.ino` uploaded, Serial Monitor at 9600 baud.
+- **Procedure:** Press the button to lock, then knock the piezo and count the knocks needed to unlock; watch the LEDs, servo, and Serial.
+- **Result (numbers):** Press → **green off, red on**, servo turns to 90°, Serial "the box is locked!". Then **3 valid knocks** (each flashing the yellow LED and printing "Valid knock of value …", counting down "2 / 1 more knocks to go") → servo returns to 0°, **green on, red off**, Serial "the box is unlocked!".
+- **Pass / fail vs target:** Target = button locks it, exactly 3 valid knocks unlock it → **PASS.**
+- **Key debug:** Before the resistors, the Serial Monitor cycled between "locked!" and "unlocked!" continuously (both inputs floating). Adding a 10 kΩ pull-down (pin 2) and a 1 MΩ across the piezo (A0) stopped the false triggering. Isolated by unplugging the piezo to test the button side alone first.
+- **What I'd change:** Tune `quietKnock`/`loudKnock` to my knock strength using the printed `value`; or require a specific knock *rhythm*, not just a count.

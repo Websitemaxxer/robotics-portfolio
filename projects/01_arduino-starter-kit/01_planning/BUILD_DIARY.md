@@ -8,6 +8,21 @@
 
 ---
 
+## 2026-07-07 — Project 12: Knock Lock (a secret-knock safe)
+
+- **Time spent:** ~50 minutes
+- **Goal today:** Build the Knock Lock — press a button to **lock** a box (a servo turns the "latch", red LED on), then **knock a secret code** (3 knocks on a piezo) to **unlock** it (servo turns back, green LED on). The piezo is used as a **knock *sensor*** here, and the servo is the actual lock.
+- **What I did:** Wired a piezo to A0 (knock input), a button to pin 2, three LEDs (yellow/green/red on pins 3/4/5) and the servo to pin 9. The sketch locks on a button press and unlocks after 3 valid knocks.
+- **What worked:** In the end it locks on the button (green → red, servo turns), each valid knock flashes the yellow LED, and 3 knocks unlock it (back to green). Photo in `05_media/photos/`, demo clip in `05_media/videos/knocklock_demo.mp4`.
+- **What failed / surprised me:** This one threw three separate problems:
+  1. **Button press did nothing** — the red LED never came on and the Serial Monitor stayed silent on a press. The button wasn't registering because **pin 2 was floating** (no pull-down), same lesson as the Spaceship button.
+  2. **A piezo leg snapped off.** One lead broke clean out of the piezo body. I field-repaired it by pushing a wire into the empty hole/pad and trimming the excess — it made contact and worked.
+  3. **The box locked and unlocked itself over and over** — the Serial Monitor rapidly flipped between "locked!" and "unlocked!" on its own. **Two** floating inputs were picking up noise: pin 2 (switch) and A0 (piezo). Pin 2 kept auto-locking, and the noisy piezo kept faking 3 knocks to auto-unlock.
+- **What I changed because of it:** Added a **10 kΩ pull-down** from pin 2 to GND (steadies the button) and a **1 MΩ resistor** across the piezo (A0 to GND, drains its charge so it reads clean). I fixed them **one at a time** — I unplugged the piezo first, added the 10 kΩ and confirmed the box sat calmly on "unlocked", then reconnected the piezo and added the 1 MΩ.
+- **Biggest lesson:** Two different inputs, two different fixes — and the way to debug it was to **isolate one at a time** (unplug the piezo so only the button could act). A digital input needs a **pull-down** to not float; a piezo knock sensor needs a **big (1 MΩ) resistor across it** to drain its charge, or it reads noise as knocks.
+- **Next step:** Project 13 (Touchy-feely Lamp) — a capacitive touch sensor (the CapacitiveSensor library is already installed).
+- **Photos:** [Finished build](../05_media/photos/knocklock_built.jpg)
+
 ## 2026-07-07 — Project 11: Crystal Ball (my first LCD — a digital magic 8-ball)
 
 > Note: I skipped Projects 9 and 10 (Motorized Pinwheel, Zoetrope) for now — they need a 9V battery I don't have yet. I'll come back to them.

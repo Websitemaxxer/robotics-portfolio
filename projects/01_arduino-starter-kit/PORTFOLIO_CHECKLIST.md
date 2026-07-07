@@ -7,8 +7,8 @@ someone can open this project and find proof of every claim. Each line says
 > Progress note: ticks below reflect the builds completed so far —
 > **Projects 2 (Spaceship Interface)**, **3 (Love-o-Meter)**,
 > **4 (Color Mixing Lamp)**, **5 (Mood Cue)**, **6 (Light Theremin)**,
-> **7 (Keyboard Instrument)**, **8 (Digital Hourglass)** and **11 (Crystal Ball)**.
-> (Projects 9 & 10 skipped for now — need a 9V battery.)
+> **7 (Keyboard Instrument)**, **8 (Digital Hourglass)**, **11 (Crystal Ball)**
+> and **12 (Knock Lock)**. (Projects 9 & 10 skipped for now — need a 9V battery.)
 > Items stay ticked as later projects add more evidence.
 
 ## Core evidence
@@ -19,7 +19,7 @@ someone can open this project and find proof of every claim. Each line says
 - [ ] **CAD / version history** — *not applicable to this project* (no custom mechanical parts) → `02_cad/`
 - [x] **BOM with costs** — all parts listed; kit cost ≈ AED 390 (UAE retail — swap in exact price if you have it) → `03_electronics/BOM.csv`
 - [x] **Wiring diagram + pin map** → `03_electronics/WIRING.md`
-- [x] **Code in the repo** — the actual sketches, not screenshots → `04_code/` (`exercise_02_spaceship_interface/`, `exercise_03_love_o_meter/`, `exercise_04_color_mixing_lamp/`, `exercise_05_mood_cue/`, `exercise_06_light_theremin/`, `exercise_07_keyboard_instrument/`, `exercise_08_digital_hourglass/`, `exercise_11_crystal_ball/`)
+- [x] **Code in the repo** — the actual sketches, not screenshots → `04_code/` (`exercise_02_spaceship_interface/`, `exercise_03_love_o_meter/`, `exercise_04_color_mixing_lamp/`, `exercise_05_mood_cue/`, `exercise_06_light_theremin/`, `exercise_07_keyboard_instrument/`, `exercise_08_digital_hourglass/`, `exercise_11_crystal_ball/`, `exercise_12_knock_lock/`)
 - [x] **Dated build diary with photos** — entry per session → `01_planning/BUILD_DIARY.md`
 - [x] **At least one documented failure + fix** — three wiring faults traced and fixed → `01_planning/BUILD_DIARY.md`
 - [x] **Quantitative test results** — numbers vs targets, pass/fail → `06_tests/TEST_LOG.md`

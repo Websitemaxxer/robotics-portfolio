@@ -73,4 +73,10 @@ saying **what you changed and why**.
   outer leg connected) by forcing Vo to GND (see the
   [build diary](../01_planning/BUILD_DIARY.md)). *(Projects 9 & 10 skipped — need a 9V
   battery.) Planned extension (`crystalball_mine.ino`): custom answers / a shake animation.*
+- **`exercise_12_knock_lock/knocklock_base.ino`** — Project 12. A button locks a servo
+  (pin 9) and 3 knocks on a piezo (A0, used as a sensor) unlock it, with red/green/yellow
+  status LEDs. Debug: it cycled locked/unlocked on its own until I fixed two floating
+  inputs — a 10 kΩ pull-down on the button and a 1 MΩ across the piezo (see the
+  [build diary](../01_planning/BUILD_DIARY.md)). *Planned extension (`knocklock_mine.ino`):
+  require a specific knock rhythm instead of just a count.*
 

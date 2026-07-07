@@ -258,3 +258,33 @@ switch is read each loop; when its state changes, all LEDs clear and the timer r
 - **A pot needs BOTH outer legs.** Mine had only one outer leg connected, so the wiper couldn't sweep any voltage — the pot "did nothing." Connecting both outer legs (5 V and GND) fixed it.
 - **So many wires.** The LCD alone needs ~12 connections; with the pot and tilt switch it was the most wire-dense build so far and easy to lose track of. Working slowly pin-by-pin from LCD pin 1 is what kept it straight.
 - **Count LCD pins from pin 1.** Off-by-one on the 16-pin header breaks everything — find the marked pin 1 and count from there.
+
+## Project 12 — Knock Lock
+
+### Wiring reference
+
+> ![Knock Lock build](../05_media/photos/knocklock_built.jpg)
+
+### Pin map
+
+| Component | Board pin | Notes |
+|-----------|-----------|-------|
+| Piezo (as knock sensor) | A0 | **1 MΩ resistor across it** (A0 → GND) to drain its charge |
+| Pushbutton | D2 | **10 kΩ pull-down** to GND; other side to +5 V |
+| Yellow LED (+ resistor) | D3 | flashes on each valid knock |
+| Green LED (+ resistor) | D4 | on when **unlocked** |
+| Red LED (+ resistor) | D5 | on when **locked** |
+| Servo (the "lock") | D9 | turns to 90° locked, 0° unlocked |
+
+Logic: button press → lock (servo 90°, red on). 3 valid knocks (reading 10–100 on A0) → unlock (servo 0°, green on).
+
+### Power
+
+- **Supply:** USB 5 V (one small servo is fine off the rail — no 9V battery needed).
+
+### Gotchas I hit
+
+- **Two floating inputs made it cycle by itself.** With no pull-down on pin 2 *and* no resistor across the piezo, both picked up noise: pin 2 auto-locked and the noisy piezo faked knocks to auto-unlock, so it flipped locked/unlocked forever. **Two fixes:** a **10 kΩ pull-down on pin 2**, and a **1 MΩ across the piezo (A0→GND)**.
+- **A piezo knock sensor needs the 1 MΩ.** Without a resistor across it, the charge a piezo generates lingers and A0 reads noise as knocks. The 1 MΩ drains it so readings are clean.
+- **Debug by isolating one input.** Unplugging the piezo left only the button active, which let me confirm the 10 kΩ pull-down worked before touching the piezo side.
+- **Field-repaired a broken piezo leg** by pushing a wire into the empty pad and trimming — check such repairs are making solid contact, or A0 floats.
