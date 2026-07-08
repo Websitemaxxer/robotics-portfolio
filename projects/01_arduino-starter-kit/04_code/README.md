@@ -85,4 +85,16 @@ saying **what you changed and why**.
   so I read the real values on Serial and lowered it to **50** to match (see the
   [build diary](../01_planning/BUILD_DIARY.md)). *Next: auto-calibrate the threshold at
   startup so it adapts to any pad.*
+- **`exercise_14_tweak_the_logo/`** — Project 14, my first project that **talks to the
+  computer.** Two files, because this project spans two machines:
+  `tweaklogo_base.ino` (the book's Arduino sketch — reads a pot on A0 and `Serial.write()`s
+  the value as a byte) and `tweaklogo_processing.pde` (the companion **Processing** sketch
+  that runs on the laptop and colours a window). The hardware is trivial; the real work was
+  **software** — quitting the Arduino IDE so Processing could own the serial port, and
+  fixing the book's `Serial.list()[0]` port pick (it grabbed the Mac's Bluetooth port, not
+  the Arduino). The pot's colour control never swept (its outer legs weren't both powered),
+  so my Processing sketch **auto-cycles the hue** for a clean demo; the Arduino sketch is
+  still the book's real pot-driven version (see the
+  [build diary](../01_planning/BUILD_DIARY.md)). *Next: get the pot sweeping a full range,
+  then switch the window back to reading the live serial byte so the knob drives the colour.*
 

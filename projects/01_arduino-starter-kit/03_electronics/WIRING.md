@@ -318,3 +318,40 @@ reading; above the threshold the LED turns on.
 - **The electrode senses your body, not just any metal.** A screw only works if it's connected to the pin-2 wire *and* you touch it with a bare finger. Bigger metal = more sensitive.
 - **Very sensitive to loose wires.** A half-seated wire made it work once then go dead — reseat everything firmly.
 - **LED polarity** — flip it if it won't light even when the sensor triggers.
+
+## Project 14 — Tweak the Arduino Logo
+
+### Wiring reference
+
+> ![Tweak the Arduino Logo wiring](../05_media/photos/tweaklogo_wired.jpg)
+
+### Pin map
+
+| Component | Board pin | Notes |
+|-----------|-----------|-------|
+| Potentiometer — wiper (lone middle terminal) | A0 | Analog input — the value sent over serial |
+| Potentiometer — one outer leg | +5 V | End of the resistive track |
+| Potentiometer — other outer leg | GND | Other end of the track |
+
+How it works: the Arduino reads A0 (0–1023), divides it by 4 to fit a single byte
+(0–255), and `Serial.write()`s that byte over the USB cable. A **Processing** sketch
+running on the computer reads the byte and uses it to set the background colour of a
+window. **The hardware here is trivial — the project is really about the two programs
+(Arduino + Processing) talking over the serial port.**
+
+### Power
+
+- **Supply:** USB 5 V — logic only, just one pot.
+- **Serial:** 9600 baud. Note the Serial Monitor shows **symbols/garbled characters**, not numbers — that's correct, because `Serial.write()` sends the raw byte value as *data* for Processing to read, not human-readable text.
+
+### Software setup (the real work of this project)
+
+- **Processing is a separate app** from the Arduino IDE — it has to be installed on its own. Processing 4 does not ship the old `processing-java` command; a sketch is run from the Processing app (or `Processing cli --sketch=<dir> --run`).
+- **Only one program can hold the serial port at a time.** Processing can't read the Arduino while the Arduino IDE's **Serial Monitor** still owns the port — and killing just the monitor doesn't help because it respawns. The fix is to **quit the whole Arduino IDE** (the board keeps running its uploaded sketch regardless).
+- **Pick the right port.** The book's Processing code uses `Serial.list()[0]` (the *first* port), which on a Mac is usually a **Bluetooth** port, not the Arduino. Search the list for the entry containing **"usbmodem"** instead.
+
+### Gotchas I hit
+
+- **Pot didn't sweep → outer legs not both powered.** The colour wouldn't change because the pot's two outer legs weren't both reaching +5 V and GND, so the wiper had no voltage range (the **same fault** as the Crystal Ball contrast pot). The Arduino was transmitting correctly the whole time — the values just sat in a narrow band.
+- **Wrong serial port / port already in use** — see the software-setup notes above; these were the biggest time-sinks and had nothing to do with the breadboard.
+- **The garbled Serial Monitor is normal.** `Serial.write()` of a raw byte shows as symbols; it doesn't mean anything is broken.

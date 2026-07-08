@@ -13,7 +13,7 @@ Servo motor (SM-S2309S),1,,,,,"Project 5 — Mood Cue pointer (pin 9); Project 1
 Yellow LED (5mm),1,,,,,Project 12 — flashes on each valid knock (pin 3)
 Resistor 1M ohm,1,,,,,"Project 12 — across the piezo (A0 to GND); Project 13 — between pins 4 and 2 for the capacitive touch sensor"
 Metal touch electrode (foil/screw),1,,,,,"Project 13 — any conductive object on the pin-2 side; you touch it to trigger the lamp"
-Potentiometer 10k ohm (rotary),1,,,,,"Project 5 — knob on A0; Project 11 — LCD contrast (wiper to Vo, both outer legs to 5V/GND)"
+Potentiometer 10k ohm (rotary),1,,,,,"Project 5 — knob on A0; Project 11 — LCD contrast (wiper to Vo, both outer legs to 5V/GND); Project 14 — knob on A0, value sent over serial to Processing"
 Electrolytic capacitor 100 uF,1,,,,,Project 5 — across the power rails to steady the servo's current draw
 16x2 LCD,1,,,,,Project 11 — character display via the LiquidCrystal library (RS/E/D4-D7)
 Pushbutton (tactile),4,,,,,"Project 2 — 1 switch on pin 2; Project 7 — 4 keys feeding the resistor ladder into A0"
@@ -22,3 +22,4 @@ Resistor 220 ohm,6,,,,,"One per LED (Project 2 LEDs; Project 4 RGB channels; Pro
 Tilt switch,1,,,,,"Project 8 — resets the hourglass (pin 8); Project 11 — triggers a new answer (pin 6)"
 Resistor 10k ohm,4,,,,,"1 pull-down for the pushbutton (Project 2); 3 for the photoresistor dividers (Project 4)"
 Jumper wires,7,,,,,Signal + power/ground on the breadboard
+Processing (software),1,processing.org,,0.00,0.00,"Project 14 — free companion app on the computer that reads the Arduino's serial data and draws the colour window (not a physical part)"

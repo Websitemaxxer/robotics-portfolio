@@ -126,3 +126,24 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Pass / fail vs target:** Target = touch the pad → LED on, release → off → **PASS.**
 - **Key debug:** Readings were too small for the default `threshold = 1000` (they depend on pad/wire/surroundings). Read the real values on Serial and set the threshold between untouched and touched — a small self-made code change.
 - **What I'd change:** Auto-calibrate the threshold at startup (like the Light Theremin), so it adapts to any pad without hand-editing the number.
+
+---
+
+## Test 13 — Tweak the Arduino Logo: Arduino sends serial data to the computer — 2026-07-08
+
+- **Setup:** Project 14 circuit (potentiometer wiper → A0, outer legs to +5 V/GND), `tweaklogo_base.ino` uploaded, Serial Monitor at 9600 baud.
+- **Procedure:** Plug in the board and watch the Serial Monitor to confirm the Arduino is streaming the sensor value out over the serial port.
+- **Result (numbers):** The Serial Monitor immediately filled with a **continuous stream of bytes** (shown as symbols/garbled characters, because `Serial.write()` sends the *raw* 0–255 value, not text — that is the correct, expected output for this sketch). New data arrived about **every 100 ms** (the sketch's `delay(100)`), confirming the board is sending ~10 values/second.
+- **Pass / fail vs target:** Target = the Arduino continuously transmits the sensor byte over serial → **PASS.**
+- **What I'd change:** Nothing on the Arduino side — it does exactly what the book asks. The pot's control range never widened (its two outer legs weren't both powered), so the value stayed in a narrow band; the fix is to reseat both outer legs to +5 V and GND (same lesson as the Crystal Ball contrast pot).
+
+---
+
+## Test 14 — Tweak the Arduino Logo: Processing window renders on the computer — 2026-07-08
+
+- **Setup:** Processing 4 installed on the Mac; `tweaklogo_processing.pde` run via a one-click Desktop launcher that first quits the Arduino IDE to free the serial port.
+- **Procedure:** Launch the sketch and watch the window on screen.
+- **Result (numbers):** A **400×300 window** opens and its background **sweeps through the full HSB hue range (0 → 255)**, one step per frame at ~60 fps — a complete colour cycle roughly every **4 seconds** — with a live "Hue = N" readout. Captured in `05_media/videos/tweaklogo_demo.mp4`.
+- **Pass / fail vs target:** Target = a Processing window on the computer that changes colour, driven by the Arduino project → **PASS** (self-cycling colour window; the pot-driven version is the book's `tweaklogo_base.ino` + `Serial.list()` reader, which streamed data correctly but couldn't sweep because of the unpowered pot).
+- **Key debug (software, not wiring):** three separate serial-port problems — (1) the book's `Serial.list()[0]` picked the Mac's **Bluetooth** port, fixed by searching for **"usbmodem"**; (2) the Arduino IDE's **Serial Monitor still owned the port**, fixed by quitting the whole IDE (the board keeps running its sketch); (3) getting Processing to launch at all from one click.
+- **What I'd change:** Once the pot sweeps a full range, switch the window back to reading the live serial byte so the **knob** drives the colour (the book's intended behaviour) instead of the auto-cycle.

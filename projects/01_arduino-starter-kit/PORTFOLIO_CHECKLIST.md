@@ -8,7 +8,8 @@ someone can open this project and find proof of every claim. Each line says
 > **Projects 2 (Spaceship Interface)**, **3 (Love-o-Meter)**,
 > **4 (Color Mixing Lamp)**, **5 (Mood Cue)**, **6 (Light Theremin)**,
 > **7 (Keyboard Instrument)**, **8 (Digital Hourglass)**, **11 (Crystal Ball)**,
-> **12 (Knock Lock)** and **13 (Touchy-feely Lamp)**.
+> **12 (Knock Lock)**, **13 (Touchy-feely Lamp)** and
+> **14 (Tweak the Arduino Logo)**.
 > (Projects 9 & 10 skipped for now — need a 9V battery.)
 > Items stay ticked as later projects add more evidence.
 
@@ -20,7 +21,7 @@ someone can open this project and find proof of every claim. Each line says
 - [ ] **CAD / version history** — *not applicable to this project* (no custom mechanical parts) → `02_cad/`
 - [x] **BOM with costs** — all parts listed; kit cost ≈ AED 390 (UAE retail — swap in exact price if you have it) → `03_electronics/BOM.csv`
 - [x] **Wiring diagram + pin map** → `03_electronics/WIRING.md`
-- [x] **Code in the repo** — the actual sketches, not screenshots → `04_code/` (`exercise_02_spaceship_interface/`, `exercise_03_love_o_meter/`, `exercise_04_color_mixing_lamp/`, `exercise_05_mood_cue/`, `exercise_06_light_theremin/`, `exercise_07_keyboard_instrument/`, `exercise_08_digital_hourglass/`, `exercise_11_crystal_ball/`, `exercise_12_knock_lock/`, `exercise_13_touchy_feely_lamp/`)
+- [x] **Code in the repo** — the actual sketches, not screenshots → `04_code/` (`exercise_02_spaceship_interface/`, `exercise_03_love_o_meter/`, `exercise_04_color_mixing_lamp/`, `exercise_05_mood_cue/`, `exercise_06_light_theremin/`, `exercise_07_keyboard_instrument/`, `exercise_08_digital_hourglass/`, `exercise_11_crystal_ball/`, `exercise_12_knock_lock/`, `exercise_13_touchy_feely_lamp/`, `exercise_14_tweak_the_logo/` — Arduino **and** Processing sketches)
 - [x] **Dated build diary with photos** — entry per session → `01_planning/BUILD_DIARY.md`
 - [x] **At least one documented failure + fix** — three wiring faults traced and fixed → `01_planning/BUILD_DIARY.md`
 - [x] **Quantitative test results** — numbers vs targets, pass/fail → `06_tests/TEST_LOG.md`

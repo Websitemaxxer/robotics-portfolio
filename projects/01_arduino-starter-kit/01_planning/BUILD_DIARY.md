@@ -8,6 +8,22 @@
 
 ---
 
+## 2026-07-08 — Project 14: Tweak the Arduino Logo (my first project that talks to the computer)
+
+- **Time spent:** ~50 minutes
+- **Goal today:** Build Tweak the Arduino Logo — the Arduino reads a **potentiometer** and sends the value **over the USB/serial cable to the computer**, where a **Processing** sketch uses it to change the colour of a window on screen. This is the first project where the Arduino isn't the whole show: it's a **sensor feeding a program running on my laptop.**
+- **What I did:** Wired a potentiometer to **A0** (wiper to A0, the two outer legs to +5 V and GND), uploaded the tiny Arduino sketch (`Serial.write(analogRead(A0) / 4)`), then installed **Processing** on the Mac and made a companion sketch to draw the colour window. Wrapped the whole thing up as a **one-click launcher** on the Desktop so it "just runs."
+- **What worked:** The Arduino side works — the Serial Monitor fills with the live sensor bytes the moment it's plugged in (they show as odd symbols, which is correct — it's raw *data* for Processing, not text). And the Processing colour window runs and sweeps smoothly through the whole rainbow. Photos in `05_media/photos/`, demo clip in `05_media/videos/tweaklogo_demo.mp4`.
+- **What failed / surprised me — this was the biggest problem of the whole kit so far.** The Arduino part was easy; getting **Processing** to actually run and read the Arduino turned into a long fight with the *software*, not the wiring:
+  1. **"What even is Processing?"** — it's a separate program from the Arduino IDE. I had to install it, and at first **double-clicking my sketch did nothing** / the window wouldn't open.
+  2. **The book's Processing code grabbed the wrong port.** It uses `Serial.list()[0]` — the *first* serial port — which on my Mac is a **Bluetooth** port, not the Arduino, so it errored out. The fix was to make it search the port list for the one containing **"usbmodem"** (the Arduino).
+  3. **Two programs can't own the serial port at once.** Processing couldn't open the port because the **Arduino IDE's Serial Monitor still had it**. Just killing the helper didn't work — it respawns and re-grabs the port — so the real fix was to **quit the whole Arduino IDE** (the board keeps running the uploaded sketch on its own).
+  4. **The knob didn't change the colour.** Even with everything talking, turning the pot did nothing on screen. The Serial values were stuck in a narrow band — the pot's **two outer legs weren't both getting power**, so the wiper had no voltage range to sweep (the *exact same* fault I'd hit on the Crystal Ball contrast pot). I proved it by uploading a quick sketch that prints all six analog pins as CSV and watching A0 barely move.
+- **What I changed because of it:** Rewrote the Processing sketch to **auto-detect the "usbmodem" port** instead of blindly taking port 0; made the launcher **quit the Arduino IDE and free the port** before starting Processing; and, since the pot's colour control was the one thing I couldn't get stable, I made a version of the window that **cycles through the colours on its own** at a steady pace, so there's a clean, repeatable demo. Both ideas are captured: the Arduino sketch (`tweaklogo_base.ino`) is the book's real pot-controlled version, and `tweaklogo_processing.pde` is the self-cycling window.
+- **Biggest lesson:** Once a project crosses onto the computer, a whole new class of bug appears that has nothing to do with the breadboard — **which** program owns the serial port, **which** port is even the right one, and whether the second program can get to it. Splitting "is the Arduino sending?" (yes — Serial Monitor proved it) from "is Processing receiving?" is the same *isolate-the-halves* habit as my hardware debugging, just applied to software.
+- **Next step:** Project 15 (Hacking Buttons) — the last project in the book. (Projects 9 & 10 still waiting on a 9V battery.)
+- **Photos:** [Finished build](../05_media/photos/tweaklogo_built.jpg) · [Wiring detail](../05_media/photos/tweaklogo_wired.jpg)
+
 ## 2026-07-08 — Project 13: Touchy-feely Lamp (a capacitive touch switch)
 
 - **Time spent:** ~40 minutes
