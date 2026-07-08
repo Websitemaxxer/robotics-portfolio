@@ -115,3 +115,14 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Pass / fail vs target:** Target = button locks it, exactly 3 valid knocks unlock it → **PASS.**
 - **Key debug:** Before the resistors, the Serial Monitor cycled between "locked!" and "unlocked!" continuously (both inputs floating). Adding a 10 kΩ pull-down (pin 2) and a 1 MΩ across the piezo (A0) stopped the false triggering. Isolated by unplugging the piezo to test the button side alone first.
 - **What I'd change:** Tune `quietKnock`/`loudKnock` to my knock strength using the printed `value`; or require a specific knock *rhythm*, not just a count.
+
+---
+
+## Test 12 — Touchy-feely Lamp: touch turns the LED on — 2026-07-08
+
+- **Setup:** Project 13 circuit (1 MΩ between pins 4 and 2, metal electrode on the pin-2 side, LED on pin 12), `touchlamp_base.ino` uploaded with `threshold` tuned to **50**, Serial Monitor at 9600 baud.
+- **Procedure:** Read the untouched value, then touch the metal pad and read the touched value; check the LED.
+- **Result (numbers):** Untouched the reading sat near **0–5**; touching the pad pushed it well above **50** (the tuned threshold), turning the LED **on**; releasing dropped it back and the LED off. The default threshold of **1000 never triggered** on this setup — the tuned value of 50 is what made it reliable.
+- **Pass / fail vs target:** Target = touch the pad → LED on, release → off → **PASS.**
+- **Key debug:** Readings were too small for the default `threshold = 1000` (they depend on pad/wire/surroundings). Read the real values on Serial and set the threshold between untouched and touched — a small self-made code change.
+- **What I'd change:** Auto-calibrate the threshold at startup (like the Light Theremin), so it adapts to any pad without hand-editing the number.

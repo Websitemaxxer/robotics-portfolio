@@ -288,3 +288,33 @@ Logic: button press → lock (servo 90°, red on). 3 valid knocks (reading 10–
 - **A piezo knock sensor needs the 1 MΩ.** Without a resistor across it, the charge a piezo generates lingers and A0 reads noise as knocks. The 1 MΩ drains it so readings are clean.
 - **Debug by isolating one input.** Unplugging the piezo left only the button active, which let me confirm the 10 kΩ pull-down worked before touching the piezo side.
 - **Field-repaired a broken piezo leg** by pushing a wire into the empty pad and trimming — check such repairs are making solid contact, or A0 floats.
+
+## Project 13 — Touchy-feely Lamp
+
+### Wiring reference
+
+> ![Touchy-feely Lamp wiring](../05_media/photos/touchlamp_wired.jpg)
+
+### Pin map
+
+| Component | Board pins | Notes |
+|-----------|-----------|-------|
+| 1 MΩ resistor | between D4 and D2 | required by `CapacitiveSensor(4, 2)` — send (4) → receive (2) |
+| Metal electrode (touch pad) | D2 side | any conductive object (foil, screw, coin); you touch it with a bare finger |
+| LED (+ 220 Ω) | D12 | on when touched |
+
+How it works: `CapacitiveSensor` sends a pulse on pin 4 and times how long pin 2
+takes to follow through the 1 MΩ. Your finger's capacitance slows that, raising the
+reading; above the threshold the LED turns on.
+
+### Power
+
+- **Supply:** USB 5 V. Needs the **CapacitiveSensor library** (installed).
+
+### Gotchas I hit
+
+- **Readings too small for the default threshold.** The sketch ships with `threshold = 1000`, but my pad/wire gave much smaller readings, so it never triggered. Watched the real values on Serial and **lowered the threshold to 50** — my own code tweak.
+- **The 1 MΩ is essential and must be the *big* one.** With a small resistor (or none) between pins 4 and 2, readings sit near 0 and touch does nothing. Bands: brown-black-green.
+- **The electrode senses your body, not just any metal.** A screw only works if it's connected to the pin-2 wire *and* you touch it with a bare finger. Bigger metal = more sensitive.
+- **Very sensitive to loose wires.** A half-seated wire made it work once then go dead — reseat everything firmly.
+- **LED polarity** — flip it if it won't light even when the sensor triggers.

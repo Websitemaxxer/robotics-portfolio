@@ -8,6 +8,22 @@
 
 ---
 
+## 2026-07-08 — Project 13: Touchy-feely Lamp (a capacitive touch switch)
+
+- **Time spent:** ~40 minutes
+- **Goal today:** Build the Touchy-feely Lamp — touch a piece of metal and an LED turns on, using the **`CapacitiveSensor` library** to sense my finger's capacitance. No button, no moving parts — the metal *is* the switch.
+- **What I did:** Wired the capacitive sensor (a **1 MΩ resistor between pins 4 and 2**, with a metal electrode on the pin-2 side) and an LED on pin 12. The sketch reads the capacitance and turns the LED on when the reading crosses a threshold.
+- **What worked:** Touch the metal pad → LED on; let go → LED off, and the Serial number jumps up when I touch. Photos in `05_media/photos/`, demo clip in `05_media/videos/touchlamp_demo.mp4`.
+- **What failed / surprised me:** A few things, and the last one was the real fix:
+  1. **The LED was in backwards** — even when the sensor triggered, nothing lit. Flipped it and it came on.
+  2. **I didn't get what "the pad" was** at first — it's just *any metal you touch* (I used a screw on a wire). It has to be **attached to the sensor wire** on the pin-2 side, and you touch it with a **bare finger** (your body's capacitance is what it senses — a screw alone does nothing).
+  3. **Flaky connections** — it worked once then went dead. The capacitive sensor is super sensitive to a half-seated wire, so I had to reseat everything firmly.
+  4. **The readings never reached the default threshold.** Even wired right, my touch values were way below the sketch's `threshold = 1000` — my pad/wire setup just reads smaller numbers. I watched the actual values on the Serial Monitor and **lowered the threshold to 50** to match, and it worked reliably.
+- **What I changed because of it:** Flipped the LED, firmed up the wiring, and — my first real **code change** — lowered `threshold` from **1000 to 50** so it triggers on my actual touch readings.
+- **Biggest lesson:** A threshold isn't one-size-fits-all. Capacitive readings depend on the pad size, wire length and surroundings, so you **read the real numbers** (untouched vs touched) and set the threshold **between** them. Tuning a constant to fit my own hardware is a small but real step from "copied the sketch" to "understood and adapted it."
+- **Next step:** Project 14 (Tweak the Arduino Logo) — sending a sensor value to a Processing sketch on the computer.
+- **Photos:** [Finished build](../05_media/photos/touchlamp_built.jpg) · [Wiring detail](../05_media/photos/touchlamp_wired.jpg)
+
 ## 2026-07-07 — Project 12: Knock Lock (a secret-knock safe)
 
 - **Time spent:** ~50 minutes

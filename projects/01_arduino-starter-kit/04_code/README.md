@@ -79,4 +79,10 @@ saying **what you changed and why**.
   inputs — a 10 kΩ pull-down on the button and a 1 MΩ across the piezo (see the
   [build diary](../01_planning/BUILD_DIARY.md)). *Planned extension (`knocklock_mine.ino`):
   require a specific knock rhythm instead of just a count.*
+- **`exercise_13_touchy_feely_lamp/touchlamp_base.ino`** — Project 13. Touch a metal pad
+  (a 1 MΩ across pins 4/2, `CapacitiveSensor` library) and an LED on pin 12 lights.
+  **My first code change:** the default `threshold` of 1000 never triggered on my setup,
+  so I read the real values on Serial and lowered it to **50** to match (see the
+  [build diary](../01_planning/BUILD_DIARY.md)). *Next: auto-calibrate the threshold at
+  startup so it adapts to any pad.*
 

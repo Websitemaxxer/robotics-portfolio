@@ -11,7 +11,8 @@ Piezo (buzzer),1,,,,,"Project 6 — sound output (pin 8); Project 12 — knock s
 Coloured gels (red/green/blue),3,,,,,"Project 4 — filters over the sensors for true colour mixing (not used yet)"
 Servo motor (SM-S2309S),1,,,,,"Project 5 — Mood Cue pointer (pin 9); Project 12 — the ""lock"" latch (pin 9)"
 Yellow LED (5mm),1,,,,,Project 12 — flashes on each valid knock (pin 3)
-Resistor 1M ohm,1,,,,,Project 12 — across the piezo (A0 to GND) to drain its charge for clean knock readings
+Resistor 1M ohm,1,,,,,"Project 12 — across the piezo (A0 to GND); Project 13 — between pins 4 and 2 for the capacitive touch sensor"
+Metal touch electrode (foil/screw),1,,,,,"Project 13 — any conductive object on the pin-2 side; you touch it to trigger the lamp"
 Potentiometer 10k ohm (rotary),1,,,,,"Project 5 — knob on A0; Project 11 — LCD contrast (wiper to Vo, both outer legs to 5V/GND)"
 Electrolytic capacitor 100 uF,1,,,,,Project 5 — across the power rails to steady the servo's current draw
 16x2 LCD,1,,,,,Project 11 — character display via the LiquidCrystal library (RS/E/D4-D7)
