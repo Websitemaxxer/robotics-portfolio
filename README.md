@@ -21,6 +21,7 @@ Anyone can say "I like robotics." This repo is the evidence. Every project keeps
 |---|---------|--------------|------------|--------|--------|
 | 1 | Arduino Starter Kit | Learning core electronics & embedded C via guided builds | Arduino, C/C++, breadboarding, sensors | In progress | [projects/01_arduino-starter-kit/](projects/01_arduino-starter-kit/) |
 | 2 | ESP32 Bluetooth Rover | Tracked rover driven wirelessly from a Bluetooth finger-ring, via an H-bridge & PWM | ESP32, Bluetooth LE (NimBLE), H-bridge/PWM, motor control | Complete | [projects/02_esp32-bluetooth-rover/](projects/02_esp32-bluetooth-rover/) |
+| 3 | Arduino Coding Challenges | Self-set, kit-level coding challenges written from scratch with no coding help, to prove I understood the kit's code | Embedded C/C++, `millis()` timing, digital I/O, debugging from review | In progress | [projects/03_arduino-coding-challenges/](projects/03_arduino-coding-challenges/) |
 
 *New projects are added with `./scripts/new_project.sh` and get a new row here.*
 
