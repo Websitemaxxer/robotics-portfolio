@@ -147,3 +147,19 @@ target is evidence; "it worked" is an opinion. Repeat the block below for every 
 - **Pass / fail vs target:** Target = a Processing window on the computer that changes colour, driven by the Arduino project → **PASS** (self-cycling colour window; the pot-driven version is the book's `tweaklogo_base.ino` + `Serial.list()` reader, which streamed data correctly but couldn't sweep because of the unpowered pot).
 - **Key debug (software, not wiring):** three separate serial-port problems — (1) the book's `Serial.list()[0]` picked the Mac's **Bluetooth** port, fixed by searching for **"usbmodem"**; (2) the Arduino IDE's **Serial Monitor still owned the port**, fixed by quitting the whole IDE (the board keeps running its sketch); (3) getting Processing to launch at all from one click.
 - **What I'd change:** Once the pot sweeps a full range, switch the window back to reading the live serial byte so the **knob** drives the colour (the book's intended behaviour) instead of the auto-cycle.
+
+---
+
+## Test 15 — Coding challenge 1 (Reaction Timer): behaviour matches the six requirements — 2026-07-08
+
+- **Setup:** `04_code/coding_challenges/challenge_01_reaction_timer/reaction_timer.ino` targeting an Arduino Uno (LED on D8, pushbutton on D2 with a 10 kΩ pull-down, Serial at 9600). This is a **self-set coding challenge**, not a book project. Checked by reading the code line-by-line against the spec and by compiling it with arduino-cli; it can also be run in a Wokwi / Tinkercad simulation. No physical board was on hand, so no measured reaction-time values are recorded yet.
+- **Procedure:** Trace each of the six required behaviours through the code and confirm it does exactly that; compile for `arduino:avr:uno`.
+- **Result:** Compiles cleanly (2978 bytes, 9% of program storage). Requirement-by-requirement:
+  1. LED off at the start of each round — **PASS** (`digitalWrite(ledPin, LOW)` at the top of `loop()`).
+  2. Random 2–5 s wait — **PASS** (`random(2000, 5001)` → 2000–5000 ms; upper bound is exclusive).
+  3. LED on = GO, and the start time is captured then — **PASS** (`start = millis()` right after `HIGH`).
+  4. Reaction time = press moment − GO moment, in ms — **PASS** (`millis() - start`).
+  5. Rounds restart on their own — **PASS** (`loop()` repeats; `delay(1000)` between rounds).
+  6. False start (press before GO) → "Too soon!" and restart — **PASS** (button polled during the wait; `return` restarts the round).
+- **Pass / fail vs target:** Target = all six behaviours correct and the sketch compiles → **6 / 6 PASS**.
+- **What I'd change:** Run it in a simulator (or on the kit) to log real reaction-time numbers — a human is usually ~150–350 ms — and call `randomSeed()` once so the wait sequence differs each power-up instead of repeating.

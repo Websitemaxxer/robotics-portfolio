@@ -355,3 +355,21 @@ window. **The hardware here is trivial — the project is really about the two p
 - **Pot didn't sweep → outer legs not both powered.** The colour wouldn't change because the pot's two outer legs weren't both reaching +5 V and GND, so the wiper had no voltage range (the **same fault** as the Crystal Ball contrast pot). The Arduino was transmitting correctly the whole time — the values just sat in a narrow band.
 - **Wrong serial port / port already in use** — see the software-setup notes above; these were the biggest time-sinks and had nothing to do with the breadboard.
 - **The garbled Serial Monitor is normal.** `Serial.write()` of a raw byte shows as symbols; it doesn't mean anything is broken.
+
+## Coding challenges (post-kit)
+
+These aren't book projects — they're self-set coding challenges (see the
+[README](../README.md#coding-challenges-consolidating-the-kit)). The circuits are
+deliberately trivial, so each one just needs a small pin map; the parts all come from the
+Starter Kit and no physical build is required (verified by code review / a Wokwi or
+Tinkercad simulation).
+
+### Challenge 1 — Reaction Timer
+
+| Component | Board pin | Notes |
+|-----------|-----------|-------|
+| LED (+ 220 Ω to GND) | D8 | the "GO" light |
+| Pushbutton | D2 | 10 kΩ **pull-down** to GND, other side to +5 V (reads HIGH when pressed) |
+| Serial | — | 9600 baud (prints the reaction time in ms) |
+
+- Same **pull-down** wiring as the Spaceship button (Project 2), so the pin reads LOW when open and HIGH when pressed — which is what the sketch's logic assumes.
