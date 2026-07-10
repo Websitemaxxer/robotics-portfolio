@@ -98,3 +98,26 @@ saying **what you changed and why**.
   [build diary](../01_planning/BUILD_DIARY.md)). *Next: get the pot sweeping a full range,
   then switch the window back to reading the live serial byte so the knob drives the colour.*
 
+## Coding challenges (post-kit consolidation)
+
+The `coding_challenges/` folder is **not** book projects. After finishing the guided
+builds I set myself small coding challenges at the same level as the kit and wrote each
+one **from a blank file, with no coding help** — given only a goal, the required
+behaviour and the pin numbers. This is where I prove I can *write* the code, not just
+follow it. Each folder holds the final working sketch; the first attempts, compile errors
+and fixes are in the [build diary](../01_planning/BUILD_DIARY.md).
+
+```
+04_code/coding_challenges/
+└── challenge_01_reaction_timer/
+    └── reaction_timer.ino
+```
+
+- **`coding_challenges/challenge_01_reaction_timer/reaction_timer.ino`** — Challenge 1. A
+  reflex game: after a random 2–5 s wait an LED (D8) turns on, you press a button (D2) as
+  fast as you can, and the Serial Monitor prints your reaction time in ms; pressing early is
+  a "Too soon!" false start. Exercises `millis()` timing, `random()`, digital in/out and
+  `Serial`. My first attempt didn't compile *and* had a core `millis()` logic bug (I treated
+  `millis()` as if it reset each round). Solved it myself; the saved sketch is a shortened
+  refactor of my own working version.
+

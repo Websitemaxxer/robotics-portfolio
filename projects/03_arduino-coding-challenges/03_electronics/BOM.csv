@@ -1,5 +1,0 @@
-item,qty,supplier,part_number,unit_cost,total_cost,notes
-LED (5mm),1,,,0.00,0.00,"Challenge 1 — the GO light (D8). Already owned in the Arduino Starter Kit; no new parts bought."
-Resistor 220 ohm,1,,,0.00,0.00,"Challenge 1 — in series with the LED. From the Starter Kit."
-Pushbutton (tactile),1,,,0.00,0.00,"Challenge 1 — reaction button (D2). From the Starter Kit."
-Resistor 10k ohm,1,,,0.00,0.00,"Challenge 1 — pull-down for the button (D2 to GND). From the Starter Kit."
