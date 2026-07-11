@@ -4,15 +4,13 @@ Tick each item once the evidence actually exists in the repo. The goal is that
 someone can open this project and find proof of every claim. Each line says
 **where** that evidence should live.
 
-> Progress note: ticks below reflect the builds completed so far —
+> **Project complete.** The 11 guided builds documented here —
 > **Projects 2 (Spaceship Interface)**, **3 (Love-o-Meter)**,
 > **4 (Color Mixing Lamp)**, **5 (Mood Cue)**, **6 (Light Theremin)**,
 > **7 (Keyboard Instrument)**, **8 (Digital Hourglass)**, **11 (Crystal Ball)**,
 > **12 (Knock Lock)**, **13 (Touchy-feely Lamp)** and
-> **14 (Tweak the Arduino Logo)**.
-> (Projects 9 & 10 skipped for now — need a 9V battery.)
-> Items stay ticked as later projects add more evidence.
->
+> **14 (Tweak the Arduino Logo)** — cover every core concept in the kit.
+> (Projects 9 & 10 need a 9V battery I don't have; Project 15 wasn't attempted.)
 > Plus a **post-kit consolidation phase** — self-set coding challenges written from
 > scratch with no coding help (Challenge 1: Reaction Timer) → `04_code/coding_challenges/`,
 > documented in the build diary and Test 15.
@@ -30,7 +28,7 @@ someone can open this project and find proof of every claim. Each line says
 - [x] **At least one documented failure + fix** — three wiring faults traced and fixed → `01_planning/BUILD_DIARY.md`
 - [x] **Quantitative test results** — numbers vs targets, pass/fail → `06_tests/TEST_LOG.md`
 - [x] **Demo video** — short clip of it working → `05_media/videos/spaceship_demo.mp4`
-- [ ] **Reflection** — save for when more of the kit is done → `07_reflection/REFLECTION.md`
+- [x] **Reflection** — original vs adapted, hardest problem, what transfers → `07_reflection/REFLECTION.md`
 
 ## Polish (do this before calling it "done")
 
