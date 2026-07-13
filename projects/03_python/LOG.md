@@ -6,8 +6,8 @@ Concepts are marked done as they're completed — self-paced, no fixed schedule.
 |---------|--------|-------|
 | Variables & types | ✅ Jul 12 | int/float/str/bool, `type()`, conversions, f-strings; read a NameError traceback ([code](week1/variables_types.py)) |
 | Functions | ⏭️ skipped | Known from prior experience — will be verified in the final assessment |
-| Scope | 🔄 in progress | |
-| Lists | | |
+| Scope | ✅ Jul 13 | Local vs global names, `UnboundLocalError`, the `global` keyword vs returning values ([code](week1/scope.py)) |
+| Lists | 🔄 in progress | |
 | Dictionaries | | |
 | Tuples & sets | | |
 | Conditionals | | |
