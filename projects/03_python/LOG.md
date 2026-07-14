@@ -7,8 +7,8 @@ Concepts are marked done as they're completed — self-paced, no fixed schedule.
 | Variables & types | ✅ Jul 12 | int/float/str/bool, `type()`, conversions, f-strings; read a NameError traceback |
 | Functions | ⏭️ skipped | Known from prior experience — will be verified in the final assessment |
 | Scope | ✅ Jul 13 | Local vs global names, `UnboundLocalError`, the `global` keyword vs returning values |
-| Lists | 🔄 in progress | |
-| Dictionaries | | |
+| Lists | ✅ Jul 14 | append/insert/remove, slicing incl. negative indices and `[::-1]`, `enumerate()` + unpacking; slices are copies |
+| Dictionaries | 🔄 in progress | |
 | Tuples & sets | | |
 | Conditionals | | |
 | Loops | | |
