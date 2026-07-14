@@ -8,8 +8,8 @@ Concepts are marked done as they're completed — self-paced, no fixed schedule.
 | Functions | ⏭️ skipped | Known from prior experience — will be verified in the final assessment |
 | Scope | ✅ Jul 13 | Local vs global names, `UnboundLocalError`, the `global` keyword vs returning values |
 | Lists | ✅ Jul 14 | append/insert/remove, slicing incl. negative indices and `[::-1]`, `enumerate()` + unpacking; slices are copies |
-| Dictionaries | 🔄 in progress | |
-| Tuples & sets | | |
+| Dictionaries | ✅ Jul 14 | build/add/update, `in`, `.get()` with fallback, `.keys()/.values()/.items()`, `sum(values)`; understands KeyError + unpack ValueError |
+| Tuples & sets | 🔄 in progress | |
 | Conditionals | | |
 | Loops | | |
 | Comprehensions | | |
