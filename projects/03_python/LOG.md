@@ -9,8 +9,8 @@ Concepts are marked done as they're completed — self-paced, no fixed schedule.
 | Scope | ✅ Jul 13 | Local vs global names, `UnboundLocalError`, the `global` keyword vs returning values |
 | Lists | ✅ Jul 14 | append/insert/remove, slicing incl. negative indices and `[::-1]`, `enumerate()` + unpacking; slices are copies |
 | Dictionaries | ✅ Jul 14 | build/add/update, `in`, `.get()` with fallback, `.keys()/.values()/.items()`, `sum(values)`; understands KeyError + unpack ValueError |
-| Tuples & sets | 🔄 in progress | |
-| Conditionals | | |
+| Tuples & sets | ✅ Jul 14 | Tuple unpacking + immutability (TypeError), set dedupe via `set()`, `len()`, membership `in` |
+| Conditionals | 🔄 in progress | |
 | Loops | | |
 | Comprehensions | | |
 | Reading tracebacks | | |
