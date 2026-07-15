@@ -11,9 +11,9 @@ Concepts are marked done as they're completed — self-paced, no fixed schedule.
 | Dictionaries | ✅ Jul 14 | build/add/update, `in`, `.get()` with fallback, `.keys()/.values()/.items()`, `sum(values)`; understands KeyError + unpack ValueError |
 | Tuples & sets | ✅ Jul 14 | Tuple unpacking + immutability (TypeError), set dedupe via `set()`, `len()`, membership `in` |
 | Conditionals | ✅ Jul 14 | if/elif/else chains, compound `and`/`or`/`not`, bools used directly (no `== True`), elif inherits failed checks |
-| Loops | 🔄 in progress | |
+| Loops | ✅ Jul 14 | `for`+`range()`, `while` (counter: create/check/increase), `while True`+`break`, `continue` guard (first-try ✓, in portfolio), infinite-loop debugging |
 | Comprehensions | | |
-| Reading tracebacks | | |
+| Reading tracebacks | 🔄 in progress | |
 | Debugging | | |
 | Modules & imports | | |
 | Virtual environments | | |
