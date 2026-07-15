@@ -12,8 +12,8 @@ Concepts are marked done as they're completed — self-paced, no fixed schedule.
 | Tuples & sets | ✅ Jul 14 | Tuple unpacking + immutability (TypeError), set dedupe via `set()`, `len()`, membership `in` |
 | Conditionals | ✅ Jul 14 | if/elif/else chains, compound `and`/`or`/`not`, bools used directly (no `== True`), elif inherits failed checks |
 | Loops | ✅ Jul 14 | `for`+`range()`, `while` (counter: create/check/increase), `while True`+`break`, `continue` guard (first-try ✓, in portfolio), infinite-loop debugging |
-| Comprehensions | | |
-| Reading tracebacks | 🔄 in progress | |
+| Comprehensions | 🔄 in progress | |
+| Reading tracebacks | ✅ Jul 14 | Bottom-up reading, error-name vocabulary; learned ValueError vs TypeError and NameError vs AttributeError distinctions the hard way |
 | Debugging | | |
 | Modules & imports | | |
 | Virtual environments | | |
