@@ -10,8 +10,8 @@ Concepts are marked done as they're completed — self-paced, no fixed schedule.
 | Lists | ✅ Jul 14 | append/insert/remove, slicing incl. negative indices and `[::-1]`, `enumerate()` + unpacking; slices are copies |
 | Dictionaries | ✅ Jul 14 | build/add/update, `in`, `.get()` with fallback, `.keys()/.values()/.items()`, `sum(values)`; understands KeyError + unpack ValueError |
 | Tuples & sets | ✅ Jul 14 | Tuple unpacking + immutability (TypeError), set dedupe via `set()`, `len()`, membership `in` |
-| Conditionals | 🔄 in progress | |
-| Loops | | |
+| Conditionals | ✅ Jul 14 | if/elif/else chains, compound `and`/`or`/`not`, bools used directly (no `== True`), elif inherits failed checks |
+| Loops | 🔄 in progress | |
 | Comprehensions | | |
 | Reading tracebacks | | |
 | Debugging | | |
