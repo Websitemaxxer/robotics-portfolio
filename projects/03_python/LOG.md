@@ -14,7 +14,7 @@ Concepts are marked done as they're completed — self-paced, no fixed schedule.
 | Loops | ✅ Jul 14 | `for`+`range()`, `while` (counter: create/check/increase), `while True`+`break`, `continue` guard (first-try ✓, in portfolio), infinite-loop debugging |
 | Comprehensions | ✅ Jul 14 | `[expr for x in list if cond]` as one-line build+filter; understands colon = block-opener rule |
 | Reading tracebacks | ✅ Jul 14 | Bottom-up reading, error-name vocabulary; learned ValueError vs TypeError and NameError vs AttributeError distinctions the hard way |
-| Debugging | 🔄 in progress | |
+| Debugging | ✅ Jul 14 | Checkpoint-print method: expect → inspect → fix above first mismatch; SyntaxError ≠ runtime bug. **Week 1 complete** |
 | Modules & imports | | |
 | Virtual environments | | |
 | Text file I/O | | |
