@@ -39,3 +39,16 @@ Concepts are marked done as they're completed — self-paced, no fixed schedule.
 | Timing & blocking | | |
 | State machine | | |
 | Final synthesis build | | |
+
+## Week 1 review — combined-concept exercises (Jul 18)
+
+Mixed exercises that pull several Week 1 concepts into one program, stepping up in difficulty. Code in [`week1/`](week1/).
+
+| Exercise | Result | Concepts combined | Notes |
+|----------|--------|-------------------|-------|
+| [Sensor check](week1/review_sensor_check.py) | Corrected | lists, enumerate, conditionals, comprehensions | Missed the position number; boundary used `> 20` so an exact 20 fell on the wrong side |
+| [Battery levels](week1/review_battery_levels.py) | ✅ First try | lists, enumerate, conditionals, comprehensions | Boundary handled correctly; redundant `elif` tidied to `else` |
+| [Motor report](week1/review_motor_report.py) | Corrected | dicts, `.items()`/`.values()`, conditionals, comprehensions, aggregation | Found the hottest motor with separate `max(values)` and `max(keys)` — `max` on keys ranks alphabetically, so name and temperature came from different motors. Fixed by tracking both together in the loop |
+
+**Takeaway so far:** loop/conditional/comprehension mechanics are solid. The recurring gap is *boundary conditions* (which side `>=` puts the equal case on) and keeping related values paired when searching for a max/min.
+
