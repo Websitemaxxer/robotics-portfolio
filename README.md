@@ -39,34 +39,3 @@ projects/<name>/
 ```
 
 The single most valuable file in each project is `01_planning/BUILD_DIARY.md` — a dated, honest log written session by session.
-
-## Skills (growing checklist)
-
-I tick these off as projects prove them. Blanks are things I haven't done *yet*.
-
-**Mechanical**
-- [x] Read and modify a CAD model *(ESP32 Rover — Blender model of the chassis)*
-- [ ] Design and 3D-print a custom part
-- [x] Assemble a moving mechanism (gears / linkages / drivetrain) *(ESP32 Rover — Technic tracked drivetrain)*
-
-**Electronics**
-- [x] Build a circuit from a wiring diagram on a breadboard *(ESP32 Rover — Fritzing design)*
-- [ ] Read a datasheet and wire a sensor correctly
-- [ ] Measure voltage and current with a multimeter
-- [x] Power a project safely (regulation, correct supply) *(ESP32 Rover — 9V pack, driver, switch, common ground)*
-
-**Software**
-- [x] Write and upload embedded C/C++ to a microcontroller *(ESP32 Rover)*
-- [x] Read a sensor and react to it in code *(Arduino Love-o-Meter — TMP36 analog read → LED bar graph)*
-- [x] Drive a motor / actuator from code *(ESP32 Rover — DRV8833 H-bridge + PWM; Arduino Mood Cue — servo)*
-- [x] Debug with serial output *(ESP32 Rover — BLE/gesture logging)*
-
-**Practice (how I work)**
-- [ ] Keep a dated build diary for a whole project *(Arduino kit in progress — diary started)*
-- [x] Document a real failure and the fix *(Arduino Spaceship — traced 3 wiring faults one by one)*
-- [x] Record quantitative test results against a target *(Arduino Spaceship — pass/fail test log)*
-- [x] Produce a short demo video *(Arduino Spaceship — demo clip)*
-
-## A note on original vs adapted work
-
-Some future projects will build on excellent open-source robotics designs — for example the **JPL Open Source Rover**, **MuSHR**, **Sawppy**, or the **Faze4** robot arm. When I do, I will **always clearly label what was original and what was adapted**, both in each project's `README.md` and in `07_reflection/REFLECTION.md`. Standing on the shoulders of open-source work is normal engineering; passing it off as fully my own is not.
