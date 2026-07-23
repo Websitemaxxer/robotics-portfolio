@@ -59,6 +59,7 @@ Harder combined exercises focused on the **accumulator pattern** — creating a 
 | Exercise | Concepts drilled |
 |----------|------------------|
 | [Drone log](week1/review_drone_log.py) | Grouping dict + counting dict + set dedupe in one loop, tuple unpacking, two-branch if/else, filtered comprehension, `max()` with `key`/`lambda`, empty-data guard |
+| [Charging station log](week1/review_charging_station_log.py) | Same pattern set, attempted solo — corrected 4 bugs: total-instead-of-list grouping, unpaired `max`, best-so-far reset in a loop, and a misplaced/broken empty guard (`len(log == 0)`) |
 
 **Recurring weak spots identified (revision targets):** (1) the accumulator pattern — before/inside/after loop placement; (2) treating a `(name, value)` tuple as if it were a bare number instead of unpacking it; (3) putting the right code in the right `if`/`else` branch; (4) choosing test data that would actually expose a bug, and exercising both branches. Verified working with both a full log and an empty log.
 
