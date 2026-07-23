@@ -1,19 +1,3 @@
-# Week 1 review: charging station log — accumulator-pattern drill (attempt 2)
-# Combines: grouping dict (list values), counting dict, set dedupe,
-#           tuple unpacking, two-branch if/else, max() with key/lambda,
-#           empty-data guard.
-# Jul 25, 2026 — model code, verified with a full log and an empty log.
-#
-# Fixed four bugs from the first attempt:
-#   1. grouping stored a running total (a number) instead of a list, so
-#      sum()/len() in the summary raised "'int' object is not iterable".
-#   2. the "most minutes" line sat inside the loop and used .values(), so
-#      it lost the station name (the pairing problem).
-#   3. the "most sessions" loop reset its best-so-far to 0 every pass and
-#      printed every robot as the winner; replaced with one max()+unpack.
-#   4. the empty-log guard was written len(log == 0) [len of a bool -> crash]
-#      and placed at the bottom, after the code it was meant to protect.
-
 log = [("dock_a", "scout", 72),
        ("dock_b", "rover", 30),
        ("dock_a", "rover", 55),

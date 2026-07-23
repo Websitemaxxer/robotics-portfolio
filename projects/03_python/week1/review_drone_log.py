@@ -1,13 +1,3 @@
-# Week 1 review: delivery drone log — accumulator-pattern drill
-# Combines: grouping dict, counting dict, set dedupe, tuple unpacking,
-#           two-branch if/else, filtered comprehension, max() with key/lambda,
-#           empty-data guard.
-# Jul 25, 2026 — model code, verified with a full log and an empty log.
-#
-# Built to drill the recurring weak spots: the accumulator pattern
-# (create before the loop, fill inside, use after) and keeping
-# (name, value) pairs together when finding a max.
-
 log = [("alpha", "north", 22),
        ("bravo", "south", 35),
        ("alpha", "north", 18),
@@ -25,19 +15,16 @@ zone_counts = {}
 heavy_drones = set()
 
 for drone, zone, battery in log:
-    # accumulator 1: group battery values into a list per drone
     if drone in battery_by_drone:
         battery_by_drone[drone].append(battery)
     else:
         battery_by_drone[drone] = [battery]
 
-    # accumulator 2: count deliveries per zone
     if zone in zone_counts:
         zone_counts[zone] += 1
     else:
         zone_counts[zone] = 1
 
-    # set: drones that ever exceeded 30%
     if battery > 30:
         heavy_drones.add(drone)
 

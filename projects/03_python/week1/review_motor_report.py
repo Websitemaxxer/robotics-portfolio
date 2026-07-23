@@ -1,14 +1,3 @@
-# Week 1 review: motor temperature report
-# Combines dictionaries, .items()/.values(), conditionals, comprehensions, aggregation
-# Jul 18, 2026 — corrected after review
-#
-# Original bug: the hottest motor was found with two separate max() calls,
-# max(robot.values()) and max(robot.keys()). max() on the keys ranks them
-# alphabetically, not by temperature, so the reported name and temperature
-# could belong to different motors (it printed "89C from motor_5" when
-# motor_5 was 87C). Fixed by tracking the name and temperature together
-# in the loop, so they always update as a pair.
-
 robot = {"motor_1": 12,
          "motor_2": 13,
          "motor_3": 14,
