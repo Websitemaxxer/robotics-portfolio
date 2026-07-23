@@ -52,3 +52,13 @@ Mixed exercises that pull several Week 1 concepts into one program, stepping up 
 
 **Takeaway so far:** loop/conditional/comprehension mechanics are solid. The recurring gap is *boundary conditions* (which side `>=` puts the equal case on) and keeping related values paired when searching for a max/min.
 
+## Accumulator-pattern drills (Jul 25)
+
+Harder combined exercises focused on the **accumulator pattern** — creating a collection before a loop, filling it inside, using it after. Worked through nested-tuple servo/battery/wheel reports and record-grouping logs.
+
+| Exercise | Concepts drilled |
+|----------|------------------|
+| [Drone log](week1/review_drone_log.py) | Grouping dict + counting dict + set dedupe in one loop, tuple unpacking, two-branch if/else, filtered comprehension, `max()` with `key`/`lambda`, empty-data guard |
+
+**Recurring weak spots identified (revision targets):** (1) the accumulator pattern — before/inside/after loop placement; (2) treating a `(name, value)` tuple as if it were a bare number instead of unpacking it; (3) putting the right code in the right `if`/`else` branch; (4) choosing test data that would actually expose a bug, and exercising both branches. Verified working with both a full log and an empty log.
+
