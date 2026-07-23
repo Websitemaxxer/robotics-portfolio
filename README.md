@@ -11,16 +11,13 @@ An aspiring engineer keeping an honest, dated record of what I build, how it wor
 | **Email** | k.kumar@ankvt.com |
 | **GitHub** | https://github.com/Websitemaxxer/robotics-portfolio |
 
-## Why this repo exists
-
-Anyone can say "I like robotics." This repo is the evidence. Every project keeps a **dated build diary** written as I go, a **bill of materials (BOM)** with real costs, **wiring diagrams**, the actual **code**, an honest record of the **failures** I hit and how I fixed them, and **quantitative test results** — numbers, not "it worked." An admissions tutor or engineer can open any project and see not just a finished result, but how I think, debug, and improve. The failures are on purpose: the gap between what I planned and what actually happened is where the real learning shows.
-
 ## Projects
 
 | # | Project | What it does | Key skills | Status | Folder |
 |---|---------|--------------|------------|--------|--------|
 | 1 | Arduino Starter Kit | Learning core electronics & embedded C via guided builds | Arduino, C/C++, breadboarding, sensors | Complete | [projects/01_arduino-starter-kit/](projects/01_arduino-starter-kit/) |
 | 2 | ESP32 Bluetooth Rover | Tracked rover driven wirelessly from a Bluetooth finger-ring, via an H-bridge & PWM | ESP32, Bluetooth LE (NimBLE), H-bridge/PWM, motor control | Complete | [projects/02_esp32-bluetooth-rover/](projects/02_esp32-bluetooth-rover/) |
+| 3 | Python for Robotics | A structured Python course building toward controlling hardware from Python | Python, data structures, file I/O, NumPy, pyserial | Ongoing | [projects/03_python/](projects/03_python/) |
 
 *New projects are added with `./scripts/new_project.sh` and get a new row here.*
 
