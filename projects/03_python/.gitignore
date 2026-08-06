@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+status.txt
+config.txt
+readings.csv
+summary.csv
+components.csv
+robot.json
