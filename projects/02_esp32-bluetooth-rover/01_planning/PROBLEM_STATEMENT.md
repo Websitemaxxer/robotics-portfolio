@@ -1,4 +1,4 @@
-# Problem Statement — ESP32 Bluetooth Rover
+# Problem Statement: ESP32 Bluetooth Rover
 
 > Written up after the fact from what the build actually was. It still serves its purpose:
 > the success criteria below are the bar I can honestly check the finished rover against.
@@ -6,8 +6,8 @@
 ## Intended user / purpose
 
 > For me, to learn. This was a personal hobby project. I wanted a hands-on way to understand
-> three things that keep coming up in robotics — **Bluetooth Low Energy (BLE)**, **H-bridge
-> motor driving**, and **PWM** — by building something I could actually drive around, rather
+> three things that keep coming up in robotics, **Bluetooth Low Energy (BLE)**, **H-bridge
+> motor driving**, and **PWM**, by building something I could actually drive around, rather
 > than just reading about them.
 
 ## The problem

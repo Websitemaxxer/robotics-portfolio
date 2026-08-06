@@ -1,11 +1,8 @@
-# Problem Statement — Arduino Starter Kit
-
-Write this **before** you start building. It keeps the project honest: at the end
-you can check whether you actually hit the success criteria you set here.
+# Problem Statement: Arduino Starter Kit
 
 ## Intended user / purpose
 
-For me — to build a genuine, hands-on foundation in electronics and embedded programming
+For me, to build a genuine, hands-on foundation in electronics and embedded programming
 that later projects (rovers, robot arms, sensor systems) will stand on. I'd rather learn
 the fundamentals properly on a known-good kit than fake my way through them.
 
@@ -36,7 +33,7 @@ selected ones myself.
 Each guided project has its own small circuit; the per-project wiring lives in
 [`../03_electronics/WIRING.md`](../03_electronics/WIRING.md) with a photo/pin map.
 
-Example — **Project 2 (Spaceship Interface):**
+Example, **Project 2 (Spaceship Interface):**
 
 > USB 5 V → Arduino Uno → pushbutton input (D2) decides state → drives green LED (D3, idle)
 > or two alternating red LEDs (D4/D5, alarm).

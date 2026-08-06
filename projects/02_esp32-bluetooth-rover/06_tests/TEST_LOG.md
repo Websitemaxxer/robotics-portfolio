@@ -1,12 +1,12 @@
-# Test Log — ESP32 Bluetooth Rover
+# Test Log: ESP32 Bluetooth Rover
 
 Each test records what was verified. The rover is finished and working; the tests below capture
-the functional results. I didn't take quantitative measurements at the time — that gap is noted
+the functional results. I didn't take quantitative measurements at the time, that gap is noted
 honestly at the bottom rather than left implied.
 
 ---
 
-## Test 1 — Motor / H-bridge bring-up — 2026-02-16
+## Test 1: Motor / H-bridge bring-up: 2026-02-16
 
 - **Setup:** ESP32 + DRV8833 wired up, `01_motor_bringup_test` sketch, powered but rover on a
   stand so the tracks can spin freely.
@@ -20,7 +20,7 @@ honestly at the bottom rather than left implied.
 
 ---
 
-## Test 2 — Bluetooth ring connect & gesture decode — 2026-02-20
+## Test 2: Bluetooth ring connect & gesture decode: 2026-02-20
 
 - **Setup:** `02_rover_ble_ring` firmware, ring powered on, ESP32 running with Serial monitor open.
 - **Procedure:** power on; watch the Serial log find the ring by MAC, connect, and subscribe;
@@ -33,7 +33,7 @@ honestly at the bottom rather than left implied.
 
 ---
 
-## Test 3 — Full driving test — 2026-02-23
+## Test 3: Full driving test: 2026-02-23
 
 - **Setup:** fully assembled rover on the floor, 9V battery, driven by the ring.
 - **Procedure:** drive forward/back/left/right; deliberately move out of range / power-cycle
