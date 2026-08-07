@@ -37,7 +37,7 @@ Runs on Python 3.13, standard library only (no external packages required).
 
 **exceptions**, [safe_config.py](02_files_and_structure/exceptions/safe_config.py) (handle a missing file) · [speed_guard.py](02_files_and_structure/exceptions/speed_guard.py) (raise a custom error for out-of-range speeds) · [parse_readings.py](02_files_and_structure/exceptions/parse_readings.py) (skip unparseable readings, average the rest)
 
-**CSV**, [sensor_stats.py](02_files_and_structure/csv/sensor_stats.py) (read, summarise, write a summary CSV) · [components_dictreader.py](02_files_and_structure/csv/components_dictreader.py) (read rows by column name with DictReader) · [filter_csv.py](02_files_and_structure/csv/filter_csv.py) (read one CSV and write the matching rows to another)
+**CSV**, [sensor_stats.py](02_files_and_structure/csv/sensor_stats.py) (read, summarise, write a summary CSV) · [components_dictreader.py](02_files_and_structure/csv/components_dictreader.py) (read rows by column name with DictReader) · [filter_csv.py](02_files_and_structure/csv/filter_csv.py) (read one CSV and write the matching rows to another) · [skip_bad_rows.py](02_files_and_structure/csv/skip_bad_rows.py) (skip invalid rows with try/except, then summarise the valid ones)
 
 **JSON**, [robot_config.py](02_files_and_structure/json/robot_config.py) (save/load a config with types intact) · [telemetry_string.py](02_files_and_structure/json/telemetry_string.py) (convert to and from a JSON string) · [save_load_records.py](02_files_and_structure/json/save_load_records.py) (save a list of records, load and filter them)
 
