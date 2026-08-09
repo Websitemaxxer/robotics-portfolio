@@ -10,7 +10,7 @@ Runs on Python 3.13, standard library only (no external packages required).
 |------|--------|--------|
 | [01_fundamentals](01_fundamentals/) | lists, dictionaries, tuples & sets, conditionals & loops, comprehensions, functions, data processing | Populated |
 | [02_files_and_structure](02_files_and_structure/) | file I/O, exceptions, CSV, JSON, modules | Populated |
-| [03_classes](03_classes/) | classes, methods, `__repr__`, composition | Planned |
+| [03_classes](03_classes/) | classes, methods, `__repr__`, composition | Populated |
 | [04_numpy_and_plotting](04_numpy_and_plotting/) | arrays, masks, vectorised ops, Matplotlib | Planned |
 | [05_hardware_control](05_hardware_control/) | pyserial, parsing serial data, Arduino commands, state machines | Planned |
 | [06_projects](06_projects/) | original end-to-end builds combining earlier topics | Planned |
@@ -42,6 +42,10 @@ Runs on Python 3.13, standard library only (no external packages required).
 **JSON**, [robot_config.py](02_files_and_structure/json/robot_config.py) (save/load a config with types intact) · [telemetry_string.py](02_files_and_structure/json/telemetry_string.py) (convert to and from a JSON string) · [save_load_records.py](02_files_and_structure/json/save_load_records.py) (save a list of records, load and filter them)
 
 **modules**, [robotics.py](02_files_and_structure/modules/robotics.py) + [main.py](02_files_and_structure/modules/main.py) (helpers imported into another file) · [telemetry.py](02_files_and_structure/modules/telemetry.py) + [analyse.py](02_files_and_structure/modules/analyse.py) (a second helper module used by an analysis script)
+
+## 03: Classes
+
+**basics**, [reading_log.py](03_classes/basics/reading_log.py) (a class with a name, an accumulating list of readings, methods to add a reading and return the average, and `__repr__`)
 
 ## Running
 
