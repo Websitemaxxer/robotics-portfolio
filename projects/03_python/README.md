@@ -47,6 +47,8 @@ Runs on Python 3.13, standard library only (no external packages required).
 
 **basics**, [reading_log.py](03_classes/basics/reading_log.py) (a class with a name, an accumulating list of readings, methods to add a reading and return the average, and `__repr__`)
 
+**composition**, [rover_wheels.py](03_classes/composition/rover_wheels.py) (a `Rover` that holds `Wheel` objects and reports which wheels need replacing by calling each wheel's own method)
+
 ## Running
 
 Each program is standalone:
