@@ -47,7 +47,7 @@ Runs on Python 3.13, standard library only (no external packages required).
 
 **basics**, [reading_log.py](03_classes/basics/reading_log.py) (accumulates readings and returns their average) · [motor.py](03_classes/basics/motor.py) (heats up and cools down, with an overheating check) · [battery.py](03_classes/basics/battery.py) (drains and recharges, reporting when it is low) · [servo.py](03_classes/basics/servo.py) (clamps its angle to 0 to 180 when rotating)
 
-**composition**, [rover_wheels.py](03_classes/composition/rover_wheels.py) (a `Rover` holding `Wheel` objects, reporting which need replacing) · [robot_motors.py](03_classes/composition/robot_motors.py) (a `Robot` holding `Motor` objects, counting overheating ones and naming the hottest) · [pack_batteries.py](03_classes/composition/pack_batteries.py) (a `Pack` holding `Battery` objects, listing the low ones and the average charge) · [fleet_drones.py](03_classes/composition/fleet_drones.py) (a `Fleet` holding `Drone` objects, counting airborne ones and naming the highest)
+**composition**, [rover_sensors.py](03_classes/composition/rover_sensors.py) (a `Rover` holding `Sensor` objects, listing the faulty ones and the average value) · [robot_motors.py](03_classes/composition/robot_motors.py) (a `Robot` holding `Motor` objects, counting overheating ones and naming the hottest) · [pack_batteries.py](03_classes/composition/pack_batteries.py) (a `Pack` holding `Battery` objects, listing the low ones and the average charge) · [fleet_drones.py](03_classes/composition/fleet_drones.py) (a `Fleet` holding `Drone` objects, counting airborne ones and naming the highest)
 
 ## Running
 
