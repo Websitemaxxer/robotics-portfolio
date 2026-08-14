@@ -57,6 +57,8 @@ Uses NumPy and Matplotlib (`pip install numpy matplotlib` in the venv). The plot
 
 **plotting**, [temperature_line.py](04_numpy_and_plotting/plotting/temperature_line.py) (a labelled line graph saved to a PNG) · [two_motors.py](04_numpy_and_plotting/plotting/two_motors.py) (two lines on one chart with a legend) · [numpy_plot.py](04_numpy_and_plotting/plotting/numpy_plot.py) (plot a NumPy array against its calibrated version)
 
+**combined** (NumPy processing plus a plot in one program), [motor_comparison.py](04_numpy_and_plotting/combined/motor_comparison.py) (vectorised average of two motors, stats, and a three-line chart) · [grid_time_averages.py](04_numpy_and_plotting/combined/grid_time_averages.py) (per-sensor and per-time means of a 2D grid, then plot the per-time means) · [grid_max_and_mean.py](04_numpy_and_plotting/combined/grid_max_and_mean.py) (2D slicing, per-time max and mean, then a two-line chart with a legend)
+
 ## Running
 
 Each program is standalone:
