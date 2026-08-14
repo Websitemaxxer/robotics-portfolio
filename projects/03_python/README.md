@@ -2,7 +2,7 @@
 
 Python for robotics: sensor data handling, telemetry logging, configuration, and control logic. Organised into six topic areas, each split into subtopics with runnable, self-contained programs.
 
-Runs on Python 3.13, standard library only (no external packages required).
+Runs on Python 3.13. Areas 01 to 03 use the standard library only; area 04 uses NumPy and Matplotlib (install with `pip install numpy matplotlib`).
 
 ## Topic areas
 
@@ -11,7 +11,7 @@ Runs on Python 3.13, standard library only (no external packages required).
 | [01_fundamentals](01_fundamentals/) | lists, dictionaries, tuples & sets, conditionals & loops, comprehensions, functions, data processing | Populated |
 | [02_files_and_structure](02_files_and_structure/) | file I/O, exceptions, CSV, JSON, modules | Populated |
 | [03_classes](03_classes/) | classes, methods, `__repr__`, composition | Populated |
-| [04_numpy_and_plotting](04_numpy_and_plotting/) | arrays, masks, vectorised ops, Matplotlib | Planned |
+| [04_numpy_and_plotting](04_numpy_and_plotting/) | arrays, masks, vectorised ops, Matplotlib | Populated |
 | [05_hardware_control](05_hardware_control/) | pyserial, parsing serial data, Arduino commands, state machines | Planned |
 | [06_projects](06_projects/) | original end-to-end builds combining earlier topics | Planned |
 
@@ -48,6 +48,14 @@ Runs on Python 3.13, standard library only (no external packages required).
 **basics**, [reading_log.py](03_classes/basics/reading_log.py) (accumulates readings and returns their average) · [motor.py](03_classes/basics/motor.py) (heats up and cools down, with an overheating check) · [battery.py](03_classes/basics/battery.py) (drains and recharges, reporting when it is low) · [servo.py](03_classes/basics/servo.py) (clamps its angle to 0 to 180 when rotating)
 
 **composition**, [rover_sensors.py](03_classes/composition/rover_sensors.py) (a `Rover` holding `Sensor` objects, listing the faulty ones and the average value) · [robot_motors.py](03_classes/composition/robot_motors.py) (a `Robot` holding `Motor` objects, counting overheating ones and naming the hottest) · [pack_batteries.py](03_classes/composition/pack_batteries.py) (a `Pack` holding `Battery` objects, listing the low ones and the average charge) · [fleet_drones.py](03_classes/composition/fleet_drones.py) (a `Fleet` holding `Drone` objects, counting airborne ones and naming the highest)
+
+## 04: NumPy & plotting
+
+Uses NumPy and Matplotlib (`pip install numpy matplotlib` in the venv). The plotting programs save a `.png` when run.
+
+**numpy**, [vectorised_ops.py](04_numpy_and_plotting/numpy/vectorised_ops.py) (scale and offset an array, then mean/max/min) · [boolean_masks.py](04_numpy_and_plotting/numpy/boolean_masks.py) (filter readings above a threshold and average them) · [slicing.py](04_numpy_and_plotting/numpy/slicing.py) (index, slice, and reverse a 1D array) · [grid_stats.py](04_numpy_and_plotting/numpy/grid_stats.py) (a 2D grid: element, row, column, per-axis means and maxes, and a count above a threshold)
+
+**plotting**, [temperature_line.py](04_numpy_and_plotting/plotting/temperature_line.py) (a labelled line graph saved to a PNG) · [two_motors.py](04_numpy_and_plotting/plotting/two_motors.py) (two lines on one chart with a legend) · [numpy_plot.py](04_numpy_and_plotting/plotting/numpy_plot.py) (plot a NumPy array against its calibrated version)
 
 ## Running
 

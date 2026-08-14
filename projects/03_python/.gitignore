@@ -7,3 +7,4 @@ readings.csv
 summary.csv
 components.csv
 robot.json
+*.png
