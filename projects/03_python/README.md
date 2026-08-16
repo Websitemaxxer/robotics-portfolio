@@ -2,7 +2,7 @@
 
 Python for robotics: sensor data handling, telemetry logging, configuration, and control logic. Organised into six topic areas, each split into subtopics with runnable, self-contained programs.
 
-Runs on Python 3.13. Areas 01 to 03 use the standard library only; area 04 uses NumPy and Matplotlib (install with `pip install numpy matplotlib`).
+Runs on Python 3.13. Areas 01 to 03 use the standard library only; area 04 uses NumPy and Matplotlib (`pip install numpy matplotlib`); area 05's `serial/` programs use pyserial and a connected Arduino (`pip install pyserial`).
 
 ## Topic areas
 
@@ -12,7 +12,7 @@ Runs on Python 3.13. Areas 01 to 03 use the standard library only; area 04 uses 
 | [02_files_and_structure](02_files_and_structure/) | file I/O, exceptions, CSV, JSON, modules | Populated |
 | [03_classes](03_classes/) | classes, methods, `__repr__`, composition | Populated |
 | [04_numpy_and_plotting](04_numpy_and_plotting/) | arrays, masks, vectorised ops, Matplotlib | Populated |
-| [05_hardware_control](05_hardware_control/) | pyserial, parsing serial data, Arduino commands, state machines | Planned |
+| [05_hardware_control](05_hardware_control/) | pyserial, parsing serial data, Arduino commands, state machines | Populated |
 | [06_projects](06_projects/) | original end-to-end builds combining earlier topics | Planned |
 
 ## 01: Fundamentals
@@ -58,6 +58,18 @@ Uses NumPy and Matplotlib (`pip install numpy matplotlib` in the venv). The plot
 **plotting**, [temperature_line.py](04_numpy_and_plotting/plotting/temperature_line.py) (a labelled line graph saved to a PNG) · [two_motors.py](04_numpy_and_plotting/plotting/two_motors.py) (two lines on one chart with a legend) · [numpy_plot.py](04_numpy_and_plotting/plotting/numpy_plot.py) (plot a NumPy array against its calibrated version)
 
 **combined** (NumPy processing plus a plot in one program), [motor_comparison.py](04_numpy_and_plotting/combined/motor_comparison.py) (vectorised average of two motors, stats, and a three-line chart) · [grid_time_averages.py](04_numpy_and_plotting/combined/grid_time_averages.py) (per-sensor and per-time means of a 2D grid, then plot the per-time means) · [grid_max_and_mean.py](04_numpy_and_plotting/combined/grid_max_and_mean.py) (2D slicing, per-time max and mean, then a two-line chart with a legend)
+
+## 05: Hardware control
+
+Talking to an Arduino over serial. The `serial/` programs use pyserial and need a connected Arduino running a sketch (`pip install pyserial`, and set `PORT` to your board); the rest are hardware-free.
+
+**serial**, [read_sensor.py](05_hardware_control/serial/read_sensor.py) (open the port, read and parse sensor lines) · [send_command.py](05_hardware_control/serial/send_command.py) (read a value and send STOP/SLOW/GO back) · [control_loop.py](05_hardware_control/serial/control_loop.py) (a timed read-decide-send loop)
+
+**parsing**, [parse_floats.py](05_hardware_control/parsing/parse_floats.py) (decode, strip, and average float readings) · [parse_labelled.py](05_hardware_control/parsing/parse_labelled.py) (split labelled lines and count above a threshold) · [parse_csv_line.py](05_hardware_control/parsing/parse_csv_line.py) (split comma-separated readings and take the max)
+
+**timing**, [ticks.py](05_hardware_control/timing/ticks.py) (non-blocking tick once per second) · [countdown.py](05_hardware_control/timing/countdown.py) (non-blocking countdown to GO) · [timed_actions.py](05_hardware_control/timing/timed_actions.py) (two independent timers in one loop)
+
+**state_machines**, [robot_states.py](05_hardware_control/state_machines/robot_states.py) (IDLE, MOVING, STOPPED driven by commands) · [charging_station.py](05_hardware_control/state_machines/charging_station.py) (IDLE, CHARGING, FULL with an ignored command) · [traffic_light.py](05_hardware_control/state_machines/traffic_light.py) (cycles RED, GREEN, AMBER with behaviour per state)
 
 ## Running
 
