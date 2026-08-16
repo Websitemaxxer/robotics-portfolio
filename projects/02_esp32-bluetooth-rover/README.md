@@ -15,44 +15,18 @@ control, H-bridge motor driving, and PWM actually fit together on an ESP32.*
 ![The rover being driven by the Bluetooth ring](05_media/photos/HERO.jpg)
 *A still from the [demo video](05_media/videos/rover_demo.mov), driving the rover with the Bluetooth ring.*
 
-## Results at a glance
-
-| Metric | Target | Achieved |
-|--------|--------|----------|
-| Drive in all 4 directions from the ring | Yes | ✅ Yes, forward / back / left / right |
-| Wireless control range | usable across a room | ✅ Worked reliably (BLE) |
-| Connection reliability | reconnects on its own | ✅ Watchdog auto-rescans / re-inits BLE |
-| Total build cost | keep it cheap | ✅ ~150 AED |
-
 ## What I did
 
-- **The problem:** I wanted to build a rover I could drive wirelessly, and use it as an excuse to
-  learn three things properly: **Bluetooth Low Energy**, **H-bridge motor driving**, and **PWM
-  speed/direction control**, on an ESP32.
-- **My contribution:** designed and assembled the tracked chassis, wired the ESP32 → DRV8833 →
-  motors, wrote the motor-control code (a clean set of `goForward/Backward/Left/Right/stop`
-  functions using PWM), and wrote the logic that turns the ring's raw Bluetooth HID reports into
-  driving commands. I first proved the motors/H-bridge with a standalone test sketch, *then*
-  layered Bluetooth on top.
-- **Adapted from source:** the **NimBLE-Arduino** library (used as intended, its standard
-  BLE-client pattern) and the off-the-shelf ring itself. No tutorial was followed; the ring's HID
-  report format was decoded by hand, and everything else is my own.
-- **Result:** a **fully working** rover, it reliably connects to the ring, decodes finger
-  gestures, and drives in all four directions, with a watchdog that re-establishes the Bluetooth
-  link on its own if it drops.
+- **Goal:** learn Bluetooth Low Energy, H-bridge motor driving, and PWM by building a rover I could drive wirelessly.
+- **My work:** designed and assembled the tracked chassis, wired the ESP32 → DRV8833 → motors, wrote the motor-control functions (`goForward/Backward/Left/Right/stop` using PWM), and wrote the logic that turns the ring's raw HID reports into drive commands. Proved the motors and H-bridge with a standalone test sketch first, then added Bluetooth.
+- **Adapted:** the NimBLE-Arduino library (standard BLE-client pattern) and the off-the-shelf ring; no tutorial, the ring's HID reports were decoded by hand.
+- **Result:** connects to the ring, decodes gestures, and drives in all four directions, with a watchdog that re-establishes the link on its own if it drops.
 
 ## Explore this project
 
-- [Problem statement](01_planning/PROBLEM_STATEMENT.md)
-- [Build plan](01_planning/BUILD_PLAN.md)
-- [**Build diary**](01_planning/BUILD_DIARY.md), the session-by-session log (start here to see how it went)
-- [CAD](02_cad/), Blender model of the rover
 - [Electronics, BOM](03_electronics/BOM.csv) & [wiring](03_electronics/WIRING.md)
 - [Code](04_code/), motor bring-up test **and** the full BLE-ring firmware
-- [Media, photos](05_media/photos/) & [**demo video**](05_media/videos/rover_demo.mov), 20-second clip driving it with the ring
-- [Test log](06_tests/TEST_LOG.md)
-- [Reflection](07_reflection/REFLECTION.md)
-- [Portfolio evidence checklist](PORTFOLIO_CHECKLIST.md)
+- [Media, photos](05_media/photos/) & [**demo video**](05_media/videos/rover_demo.mov), a 20-second clip driving it with the ring
 
 ## Quick facts
 

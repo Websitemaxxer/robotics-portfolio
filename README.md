@@ -17,7 +17,7 @@ An aspiring engineer keeping an honest, dated record of what I build, how it wor
 |---|---------|--------------|------------|--------|--------|
 | 1 | Arduino Starter Kit | Learning core electronics & embedded C via guided builds | Arduino, C/C++, breadboarding, sensors | Complete | [projects/01_arduino-starter-kit/](projects/01_arduino-starter-kit/) |
 | 2 | ESP32 Bluetooth Rover | Tracked rover driven wirelessly from a Bluetooth finger-ring, via an H-bridge & PWM | ESP32, Bluetooth LE (NimBLE), H-bridge/PWM, motor control | Complete | [projects/02_esp32-bluetooth-rover/](projects/02_esp32-bluetooth-rover/) |
-| 3 | Python for Robotics | Python programs for sensor data handling, telemetry logging, config, and control logic | Python, data structures, file I/O, CSV/JSON, modules | Ongoing | [projects/03_python/](projects/03_python/) |
+| 3 | Python for Robotics | Python programs for sensor data handling, telemetry logging, config, and control logic | Python, data structures, file I/O, CSV/JSON, NumPy, pyserial | Complete | [projects/03_python/](projects/03_python/) |
 
 ## How to read a project
 

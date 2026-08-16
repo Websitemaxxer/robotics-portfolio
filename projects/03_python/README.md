@@ -1,6 +1,6 @@
 # 03: Python
 
-Python for robotics: sensor data handling, telemetry logging, configuration, and control logic. Organised into six topic areas, each split into subtopics with runnable, self-contained programs.
+Python for robotics: sensor data handling, telemetry logging, configuration, and control logic. Organised into five topic areas, each split into subtopics with runnable, self-contained programs.
 
 Runs on Python 3.13. Areas 01 to 03 use the standard library only; area 04 uses NumPy and Matplotlib (`pip install numpy matplotlib`); area 05's `serial/` programs use pyserial and a connected Arduino (`pip install pyserial`).
 
@@ -13,7 +13,6 @@ Runs on Python 3.13. Areas 01 to 03 use the standard library only; area 04 uses 
 | [03_classes](03_classes/) | classes, methods, `__repr__`, composition | Populated |
 | [04_numpy_and_plotting](04_numpy_and_plotting/) | arrays, masks, vectorised ops, Matplotlib | Populated |
 | [05_hardware_control](05_hardware_control/) | pyserial, parsing serial data, Arduino commands, state machines | Populated |
-| [06_projects](06_projects/) | original end-to-end builds combining earlier topics | Planned |
 
 ## 01: Fundamentals
 
